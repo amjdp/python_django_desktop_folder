@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+        #parent{
+            width: 500px;
+            height: 500px;
+            background: yellow;
+        }
+        .red{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .blue{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: fixed; 
+            /* always use the viewport - responsive design mode - 
+            if the user resize the browser window it will alwasys be at the offset given */
+            bottom: 50px;
+            right: 50px;
+        }
+        .green{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+        
+    </style>
+
+</head>
+<body>
+    
+    <div id="parent">
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="green"></div>
+    </div>
+
+</body>
+</html>

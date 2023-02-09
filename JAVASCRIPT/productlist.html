@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- bootstrap 4.3 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .btn_delete {
+            width: 100%;
+            height: 100%;
+            background-color: #bd1d1d;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 10px 7px;
+        }
+
+        .btn_edit {
+            width: 100%;
+            height: 100%;
+            background-color: #0051ff;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 10px 15px;
+        }
+    </style>
+</head>
+
+<body style="background-color: rgb(183, 255, 231);">
+
+    <!-- product insert form -->
+    <h1 style="text-align: center; margin-top: 20px;">Product List</h1>
+    <div style="width: 50%; margin-left: auto; margin-right: auto; ">
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Product Name</label>
+            <div class="col-sm-10">
+                <input type="email" class="form-control" id="nameField" placeholder="Product"><br>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputPassword3" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" id="descriptionField" placeholder="Write Description" rows="3"
+                    style="margin-bottom: 20px;"></textarea>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="pricefield" placeholder="₹"><br>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="inputEmail3" class="col-sm-2 col-form-label">Current Stock</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="stockField" placeholder="Count"><br>
+            </div>
+        </div>
+
+        <div class="">
+            <div class="col-sm-10" style="width: 100%">
+                <button type="submit" class="btn btn-primary" style="width: 50%; margin-left: 40%; "
+                    onclick=" return addProduct()">Add Product</button>
+            </div>
+        </div>
+    </div><br><br>
+
+    <!-- Dashboard TB -->
+    <h1 style="text-align: center; margin-top: 20px; color: #000000; ">Product Dashboard</h1>
+    <table style="width: 90%; margin-left: auto; margin-right: auto; border: 2px black solid ;" id="pd_table">
+        <tr class="thead-dark">
+            <th>S.No</th>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Current Stock</th>
+            <th></th>
+        </tr>
+    </table>
+
+    <!-- MODAL -->
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Update Stock List</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closemodal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Product Id</label>
+                        <input type="text" class="form-control" id="idField">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Product Name</label>
+                        <input type="text" class="form-control" id="u_nameField">
+
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Current Stock</label>
+                        <input type="text" class="form-control" id="u_currentField">
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">New Stock</label>
+                        <input type="text" class="form-control" id="newStockfield">
+                    </div>
+
+                    <!--For connect with new page-->
+                    <!-- <input type="text" class="form-control" id="hiddenStockfield" -->
+                    
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; align-content: center;"
+                        onclick="return updateStock()" id="btn_updatestock">Update Stock</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // Data from Form 
+        var p_name = document.getElementById('nameField')
+        var p_des = document.getElementById('descriptionField')
+        var p_price = document.getElementById('pricefield')
+        var p_stock = document.getElementById('stockField')
+
+        // Date re-adjustment
+        const dt = new Date();
+        const id_date = '-' + dt.getDay() + '/' + dt.getMonth()
+
+        var sno = 0  // var p_id= sno
+
+        // add filled product details to TB
+        function addProduct() {
+
+            if (p_name.value == '' || p_des.value == '' || p_price.value == '' || p_stock.value == '') {
+                alert('please fill all columns')
+                return false
+            }
+
+            // element creation
+            new_row = document.createElement('tr')
+            sno++
+            // create unique id to rows
+            var row_no = 'row' + sno
+            new_row.setAttribute('id', row_no)
+
+
+            td_sno = document.createElement('td')
+            td_id = document.createElement('td')
+            td_name = document.createElement('td')
+            td_des = document.createElement('td')
+            td_price = document.createElement('td')
+            td_stock = document.createElement('td')
+            td_delete = document.createElement('td')
+            td_edit = document.createElement('td')
+
+            // append td to new row
+            new_row.appendChild(td_sno)
+            new_row.appendChild(td_id)
+            new_row.appendChild(td_name)
+            new_row.appendChild(td_des)
+            new_row.appendChild(td_price)
+            new_row.appendChild(td_stock)
+            new_row.appendChild(td_delete)
+            new_row.appendChild(td_edit)
+
+            // insert datas to td
+            td_sno.innerHTML = sno
+            td_id.innerHTML = "PRO0" + sno + id_date
+            td_name.innerHTML = p_name.value
+            td_des.innerHTML = p_des.value
+            td_price.innerHTML = p_price.value
+            td_stock.innerHTML = p_stock.value
+            td_delete.innerHTML = "<button class='btn_delete' onclick='delete_row()'>Delete</button>"
+            td_edit.innerHTML = "<button class='btn_edit' onclick='edit_row()' data-toggle='modal' data-target='#exampleModal'> Edit </button>"
+
+            pd_table.appendChild(new_row) // append new row to table
+
+            // Clear textFields afer submit
+            p_name.value = ""
+            p_des.value = ""
+            p_price.value = ""
+            p_stock.value = ""
+        }
+
+        // delete product ()
+        function delete_row() {
+            var selected_row = event.target.parentNode.parentNode //Call the specified row 
+            selected_row.remove() //Remove the selected Row
+        }
+
+        // edit product stock ()
+        function edit_row() {
+
+            var selected_row = event.target.parentNode.parentNode //Call the specified row 
+            var children = selected_row.childNodes // call childNodes(td's)
+
+            // input id to variable from Modal
+            var u_id = document.getElementById('idField')
+            var u_name = document.getElementById('u_nameField')
+            var u_current = document.getElementById('u_currentField')
+            var u_newstock = document.getElementById('newStockfield')
+            // var hiddenvalue = document.getElementById('hiddenStockfield') For connect with new page
+
+            id = selected_row.id
+
+            // asign datas to modal input box
+            u_id.value = children[1].innerHTML
+            u_name.value = children[2].innerHTML
+            u_current.value = children[5].innerHTML
+
+            // Input fields become read-only
+            u_id.readOnly = true
+            u_name.readOnly = true
+            u_current.readOnly = true
+            var newStock = document.getElementById('newStockfield')
+
+            newStock.value = ''
+
+        }
+
+        // update stock count ()
+        function updateStock() {
+
+            //var id = document.getElementById('hiddenStockfield').value
+            var newStock = document.getElementById('newStockfield').value
+            var oldstock = document.getElementById('u_currentField').value
+            var updatedStock = parseInt(oldstock) + parseInt(newStock)
+            td_list = document.getElementById(id).childNodes
+
+            td_list[5].innerHTML = updatedStock
+
+            var close = 'modal'
+            document.getElementById('btn_updatestock').setAttribute('data-dismiss', close)
+
+
+        }
+
+
+
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

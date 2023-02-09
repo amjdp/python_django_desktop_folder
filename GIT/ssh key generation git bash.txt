@@ -1,0 +1,94 @@
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+
+$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+enter passphrase 
+
+cat ~/.ssh/id_rsa.pub
+
+copy the generated ssh key  
+
+github settings - SSH and GPG keys - New SSH key - paste the generated key - Add SSH Key 
+
+
+git --version
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ATHIRA M J@DESKTOP-N271D42 MINGW64 ~
+$ cat C:/Users/ATHIRA M J/.ssh/id_rsa.pub
+cat: 'C:/Users/ATHIRA': No such file or directory
+cat: M: No such file or directory
+cat: J/.ssh/id_rsa.pub: No such file or directory
+
+ATHIRA M J@DESKTOP-N271D42 MINGW64 ~
+$ cat C:\Users\ATHIRA M J\.ssh\id_rsa.pub
+cat: 'C:UsersATHIRA': No such file or directory
+cat: M: No such file or directory
+cat: J.sshid_rsa.pub: No such file or directory
+
+ATHIRA M J@DESKTOP-N271D42 MINGW64 ~
+$ cat \C:\Users\ATHIRA M J\.ssh\id_rsa.pub
+cat: 'C:UsersATHIRA': No such file or directory
+cat: M: No such file or directory
+cat: J.sshid_rsa.pub: No such file or directory
+
+ATHIRA M J@DESKTOP-N271D42 MINGW64 ~
+$ cat /C:/Users/ATHIRA M J/.ssh/id_rsa.pub
+cat: '/C:/Users/ATHIRA': No such file or directory
+cat: M: No such file or directory
+cat: J/.ssh/id_rsa.pub: No such file or directory
+
+ATHIRA M J@DESKTOP-N271D42 MINGW64 ~
+$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDI+zRLwWO7dM2XXPNkdbcYEOzFMkbkYogMWgLipPPz55k3QlS0u1kmM6xiqGJXi13yPoRJMw26tfM74i3Ql10EiGTukXRhKLzd5K9xs69EfVScTeqcTwfEFHKHgEv1fmwlV7tj1vWrWz4in8Toyzz7PJIwgrmifHMHHSZlco7N7TnsrbITADa6iXweyjK7rZGKUCMjeDlF0u8Hs2SC363ABFbizWn8nN0vAj3qKHnxlvXFeD3lN4jHgwu2jvj6EVDbCPYy/AbPSyrVnoRvqyKTS+fTXsdomBz/9EP2hRwymRDKJnn1ynYq9S28t4CdTej2GQqtEP29go2aTGhNt0FX Athira Windows
+
+ATHIRA M J@DESKTOP-N271D42 MINGW64 ~
+$ cat id_rsa.pub
+cat: id_rsa.pub: No such file or directory
+
+ATHIRA M J@DESKTOP-N271D42 MINGW64 ~
+$ git config --list
+diff.astextplain.textconv=astextplain
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+http.sslbackend=openssl
+http.sslcainfo=C:/Program Files/Git/mingw64/ssl/certs/ca-bundle.crt
+core.autocrlf=true
+core.fscache=true
+core.symlinks=false
+pull.rebase=false
+credential.helper=manager-core
+credential.https://dev.azure.com.usehttppath=true
+init.defaultbranch=master
+user.name=amjdp
+user.email=athiramj123@gmail.com
+
+ATHIRA M J@DESKTOP-N271D42 MINGW64 ~
+$ git config --help
+
+ATHIRA M J@DESKTOP-N271D42 MINGW64 ~
+$ git help add
+
+ATHIRA

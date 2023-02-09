@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        .button {
+            background-color: #bd1d1d;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            text-decoration: none;
+            font-size: 13px;
+            padding: 10px 7px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="width: 50%; margin-left: auto; margin-right: auto; padding-top: 50px;">
+        <div class="form-group">
+            <h1 style="text-align: center ;">ToDo List</h1>
+            <label for="exampleInputEmail1">Task</label>
+            <input type="email" class="form-control" id="taskField" aria-describedby="emailHelp"
+                placeholder="Enter your Task"><br>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Description</label>
+            <input type=" " class="form-control" id="desField" placeholder="Description...">
+        </div><br>
+        <button type="submit" class="btn btn-primary" style=" width: 100%;" id="s_btn"
+            onclick="addTask()">Submit</button>
+    </div><br><br>
+
+    <h1 style="text-align: center ;">Task Status List</h1>
+    <table style="width: 90%; margin-left: auto; margin-right: auto; border: 2px black solid ;" id="todo_tb">
+        <thead class="">
+            <tr>
+                <th scope="col">SL.NO</th>
+                <th scope="col">Task</th>
+                <th scope="col">Description</th>
+                <th scope="col">Date</th>
+                <th scope="col">Status</th>
+                <th scope="col">Completion Date</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script>
+        var s_no = 0 // Serial Number variable Declaration
+
+        // Date declaration using Date built-in ()
+        const dt = new Date();
+        const current_date = dt.getDay() + '/' + dt.getMonth() + '/' + dt.getFullYear() + ' ' + dt.getHours() + ':' + dt.getMinutes() + ':' + dt.getSeconds()
+
+        function addTask() {
+            // Geting values from input fields
+            task = document.getElementById('taskField')
+            description = document.getElementById('desField')
+
+            var todo_tb = document.getElementById('todo_tb') // Storing table to todo_tb variable
+            new_tr = document.createElement('tr') // Create New Row
+
+            s_no++
+            // create unique id for Row
+            var row_no = 'row' + s_no
+            new_tr.setAttribute('id', row_no)
+
+            // Create table datas(td)            
+            td_sn = document.createElement('td')
+            td_task = document.createElement('td')
+            td_description = document.createElement('td')
+            td_date = document.createElement('td')
+            td_status = document.createElement('td')
+            td_completionDate = document.createElement('td')
+            td_action = document.createElement('td')
+
+            // appending td's to tr 
+            new_tr.appendChild(td_sn)
+            new_tr.appendChild(td_task)
+            new_tr.appendChild(td_description)
+            new_tr.appendChild(td_date)
+            new_tr.appendChild(td_status)
+            new_tr.appendChild(td_completionDate)
+            new_tr.appendChild(td_action)
+
+            // assingn datas to td
+            td_sn.innerHTML = s_no
+            td_task.innerHTML = task.value
+            td_description.innerHTML = description.value
+            td_date.innerHTML = current_date
+            td_status.innerHTML = "Pendding"
+            td_status.style.color = 'red'
+            td_completionDate.innerHTML = "Not Completed"
+            td_action.innerHTML = document.createElement('button')
+            td_action.innerHTML = "<button class='button' onclick='updateStatus()' id='td_action'>Not Completed</button>"
+
+            todo_tb.appendChild(new_tr) // Put new_raw datas into TODOTable
+            
+            // Clear textFields afer submit
+            task.value = ""
+            description.value = ""
+        }
+
+        function updateStatus() {
+            var selected_row = event.target.parentNode.parentNode //Call the specified row 
+            var children = selected_row.childNodes // call childNodes(tdies)
+
+            // change values of td
+            children[4].innerHTML = "Finished"
+            children[4].style.color = "green"
+            children[5].innerHTML = current_date
+            children[6].innerHTML = "Completed"
+            children[6].className = "btn btn-success"
+
+            selected_row.style.textDecoration = 'line-through' // Strike the entire Row
+        }
+    </script>
+
+</body>
+
+</html>

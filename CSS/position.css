@@ -1,0 +1,20 @@
+#parent{
+    width: 500px;
+    height: 500px;
+    background: yellow;
+}
+.red{
+    width: 100px;
+    height: 100px;
+    background: red;
+}
+.green{
+    width: 100px;
+    height: 100px;
+    background: green;
+}
+.blue{
+    width: 100px;
+    height: 100px;
+    background: blue;
+}

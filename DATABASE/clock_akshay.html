@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'poppins', sans-serif;
+        }
+
+        html,
+        body {
+
+            background-color: cornflowerblue;
+
+            height: 100vh;
+            place-items: center;
+        }
+
+        .heading {
+            display: flex;
+            justify-content: center;
+            bottom: 29px;
+            /* position: absolute; */
+            /* top: 38px; */
+            margin-top: 83px;
+            font-size: 60px;
+            color: #fff;
+            /* border: 1px solid black; */
+            font-weight: 700;
+            text-shadow: 12px 12px 22px black;
+        }
+
+        .main {
+            display: grid;
+            background: red;
+            width: 50%;
+            position: absolute;
+
+            top: 38%;
+            left: 24%;
+            height: 265px;
+            border-radius: 18px;
+            box-shadow: 12px 12px 22px;
+
+        }
+
+        .main .display {
+            background: blue;
+            margin: 16px;
+            height: 235px;
+            text-align: center;
+            overflow: hidden;
+
+
+
+        }
+
+        .main .display .time {
+            line-height: 234px;
+            color: #fff;
+            font-size: 117px;
+            text-shadow: 12px 12px 22px black;
+            font-weight: 600;
+            letter-spacing: 4px;
+            transition: all 1.5s ease;
+
+        }
+
+        .main .display .time:hover {
+            transition: 0.5s;
+            background: blue;
+            transform: scale(1.3);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="heading">DIGITAL CLOCK</h1>
+        <div class="main">
+
+            <div class="display">
+                <div id="time" class="time"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+
+        function showTime() {
+            var time = new Date()
+            var hh = time.getHours()
+            var mm = time.getMinutes()
+            var ss = time.getSeconds()
+            var am_or_pm = 'AM'
+
+            if (hh > 12) {
+                am_or_pm == 'PM'
+            }
+
+
+            if (hh > 12) {
+                hh = hh - 12
+            }
+
+            if (hh == 0) {
+                hh = 12
+            }
+            if (hh < 10) {
+                hh = '0' + hh
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+            if (ss < 10) {
+                ss = '0' + ss
+            }
+            var time = document.getElementById('time')
+            time.innerHTML = hh + ':' + mm + ':' + ss + ' ' + am_or_pm
+            setTimeout(showTime, 1000)
+
+        }
+
+
+        showTime()
+
+    </script>
+
+</body>
+
+</html>

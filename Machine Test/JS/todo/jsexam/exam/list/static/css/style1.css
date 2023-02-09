@@ -1,0 +1,60 @@
+.list{
+    color: white;
+    padding-top: 20px;
+}
+.container{
+    width: 40%;
+    border-radius: 10px;
+    min-width: 450px;
+    min-height: 100px;
+}
+
+#tsk input{
+    width: 75%;
+    height: 45px;
+    padding: 12px;
+    color: #111111;
+    font-weight: 500;
+    position: relative;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+    border: 2px solid #d1d3d4;
+}
+
+#tsk input:focus{
+    outline: none;
+    border-color: #0d75ec;
+}
+
+#tsk button{
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    background-color: #0d75ec;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    outline: none;
+    width: 20%;
+    height: 45px;
+    border-radius: 5px;
+    font-family: 'Poppins',sans-serif;
+}
+
+
+
+.tb{
+    
+    border: 1px black solid;
+    width: 900px;
+    color: blue;
+    padding-top: 30px;
+    
+
+}
+td {
+    text-align: center;
+    color: white;
+    text-size-adjust: 30px;
+  }

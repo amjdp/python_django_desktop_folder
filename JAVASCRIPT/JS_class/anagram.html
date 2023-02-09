@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // // JavaScript program to check whether
+        // // two strings are anagrams of each other
+
+        // // Function to check whether two strings
+        // // are anagram of each other
+
+        // function areAnagram(str1, str2) {
+        //     // Get lengths of both strings
+        //     let n1 = str1.length;
+        //     let n2 = str2.length;
+
+        //     // If length of both strings is not
+        //     // same, then they cannot be anagram
+        //     if (n1 != n2)
+        //         return false;
+
+        //     // Sort both strings
+        //     str1.sort();
+        //     str2.sort()
+        //     document.write("<br>sorted str1<br>", str1, '<br>')
+
+        //     document.write("<br>sorted str2<br>", str2, '<br>')
+        //     // Compare sorted strings
+        //     for (let i = 0; i < n1; i++)
+        //         if (str1[i] != str2[i])
+        //             return false;
+
+        //     return true;
+        // }
+
+        // Driver Code
+
+        // let str1 = ['r', 'a', 'c', 'e'];
+        // let str2 = ['c', 'a', 'r', 'e'];
+        str1 = []
+        str2 = []
+        array_length = Number(prompt('enter array lenth'))
+
+        for (k = 0; k < array_length; k++) {
+            str[k] = prompt('enter array element in first array')
+            // str1.append(el)
+        }
+
+        for (j = 0; j < array_length; j++) {
+            str[j] = prompt('enter array element in second array')
+            // str2.append(el2)
+        }
+        console.log(" str1<br>", str1, "<br> str2<br>", str2, "<br>")
+        document.write(" str1<br>", str1, "<br> str2<br>", str2, "<br>")
+
+
+        // Function Call
+        if (areAnagram(str1, str2))
+            document.write(
+                "The two strings are" +
+                " anagram of each other<br>");
+        else
+            document.write(
+                "The two strings are not" +
+                " anagram of each other<br>");
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      div {
+        background-color: gold;
+        border: 2px blue solid;
+      }
+
+      .xyz {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 10%;
+        grid-template-rows: 5% 35% 30% 5%;
+        grid-gap: 25px 25px;
+        justify-content: center;
+        height: 100vh;
+        align-content: center;
+        text-align: center;
+      }
+      .a {
+        /* text-align: center;       */
+        grid-area: 1/1/2/5;
+      }
+      .b {
+        /* text-align: center;  */
+        grid-area: 2/1/3/4;
+        overflow: hidden;
+      }
+      .c {
+        /* text-align: center;  */
+        grid-area: 2/4/4/5;
+      }
+      .d {
+        background-image: url(7692.jpg);
+        background-size: cover;
+        grid-area: 3/1/4/2;
+      }
+      .e {
+        background-image: url(7692.jpg);
+        background-size: cover;
+        grid-area: 3/2/4/3;
+      }
+      .f {
+        /* background-image: url(/static/image/7692.jpg);  */
+        background-image: url(7692.jpg);
+        background-size: cover;
+
+        grid-area: 3/3/4/4;
+      }
+      .g {
+        /* text-align: center;  */
+        grid-area: 4/1/5/5;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="xyz">
+      <div text-align: center; class="a">Heading</div>
+      <div class="b">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi error
+          reprehenderit quasi rerum rem sit Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Eum doloribus harum quae eligendi nihil
+          excepturi dicta iusto nulla architecto possimus, quasi deserunt
+          quibusdam ab labore facere. Sit earum tenetur aspernatur voluptatem
+          corrupti saepe, sequi placeat doloremque nemo dolorem officia
+        </p>
+      </div>
+      <div class="c">Side bar</div>
+      <div class="d"></div>
+      <div class="e"></div>
+      <div class="f"></div>
+      <div class="g">Footer</div>
+    </div>
+  </body>
+</html>

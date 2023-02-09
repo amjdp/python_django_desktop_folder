@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+        #parent{
+            width: 500px;
+            height: 500px;
+            background: yellow;
+            position: relative; 
+            
+        }
+        .red{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .blue{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            /* position: absolute; 
+            left: 200px; */ 
+            /* position relative - moves up from its own position */
+            /* position: relative;
+            bottom:50px; */
+            /* moves from parent's position - green div shifted up & occupies 
+            the space where blue div used to occupy bcoz with absolue positioning
+            elements are removed from the document flow */
+            position: absolute;
+            bottom: 50px;
+        }
+        .green{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+        
+    </style>
+
+</head>
+<body>
+    
+    <div id="parent">
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="green"></div>
+    </div>
+
+</body>
+</html>

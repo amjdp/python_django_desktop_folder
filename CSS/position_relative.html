@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position</title>
+
+    <style>
+
+        /*
+        Static(default)
+        Relative
+        Absolute
+        Fixed
+        Sticky
+
+        positioning keywords - offset
+        top, bottom, left, right
+        + offset inwards
+        - offset outwards
+
+        relative - positioned according to itself - its original position - 
+        moves from its original position
+        you can use two keywords - top,right - top,left - bottom,right - bottom,left
+        don't use opposing sides as keywords - i.e. top,bottom - right,left
+
+        document flow - inline(image,links,inputs), block(div,paragraph,lists)
+        default behaviour of tags - to change display : block | inline;
+
+        relative - elements are not removed from the document flow - 
+                - do not modify the document flow visually they just move visually and 
+                the other elements appear where they normally would
+        
+        absolute - positioned according to the nearest containing element 
+                 - positioned based on another element or the nearest parent element
+                 - elements are removed from document flow
+
+        fixed - according to viewport (browser window)
+              - works basically the exact same way as the absolute positioning works
+              - except the parent element is always the viewport
+              - elements are removed from the document flow
+
+        sticky - containing element(with conditions)
+               - its treated as relatively positioned until its containing block crosses a specified
+               - threshold(such as setting top to value other than auto) within its flow root(or the container
+               - it scrolls within), at which point it is treated as "stuck" 
+               - until meeting edge of its containing block
+               - behaves like relative until its stuck & then it behaves like fixed
+
+        z-index : higher z-index are on top of lowr z-indexes
+
+        */
+
+
+        #parent{
+            width: 500px;
+            height: 500px;
+            background: yellow;
+        }
+        .red{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        .blue{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: relative; 
+            /* does not remove the document flow */
+             left: 200px; 
+            /* left: -50px; */
+            /* + inwards - outwards offset */
+        }
+        .green{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+        
+    </style>
+
+</head>
+<body>
+    
+    <div id="parent">
+        <div class="red"></div>
+        <div class="blue"></div>
+        <div class="green"></div>
+    </div>
+
+</body>
+</html>

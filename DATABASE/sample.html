@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang = "en">  
+    <head>  
+      <meta charset = "UTF-8">  
+      <meta name = "viewport" content = "width=device-width, initial-scale=1.0">  
+      <meta http-equiv = "X-UA-Compatible" content = "ie=edge">  
+      <title> 
+     </title>  
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.1/jquery.min.js"> </script>  
+            <script src = "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.0.0/moment.min.js"> </script>   
+    <style>  
+    body {   
+      text-align: center;  
+      padding: 20px;  
+    background-color: #F8F9FA;  
+    background-size: 1800% 1800%;  
+     }  
+    h1  {   
+      padding-bottom: 5px;  
+    }  
+    h2  {  
+      margin-top: 40px;   
+      color: #999;   
+    }  
+    .clock {  
+        position: absolute;  
+        top: 50%;  
+        left: 50%;  
+         padding-top: 15px;  
+        transform: translateX(-50%) translateY(-50%);  
+        color: #17D4FE;  
+        font-size: 60px;   
+        letter-spacing: 7px;  
+    }  
+    </style>  
+    <body>  
+    <div id = "MyClockDisplay" class = "clock" onload = "showTime()"> </div>  
+    <script>  
+    function showTime(){  
+        var date = new Date();  
+        var h = date.getHours();  
+        var m = date.getMinutes();  
+        var s = date.getSeconds();  
+        var session = "AM";  
+        if(h == 0) {  
+            h = 12;  
+        }  
+        if(h > 12) {  
+            hh = h - 12;  
+            session = "PM";  
+        }  
+        h = (h < 10) ? "0" + h : h;  
+        m = (m < 10) ? "0" + m : m;  
+        s = (s < 10) ? "0" + s : s;  
+        var time = h + ":" + m + ":" + s + " " + session;  
+        document.getElementById("MyClockDisplay").innerText = time;  
+        document.getElementById("MyClockDisplay").textContent = time;  
+        setTimeout(showTime, 1000);  
+    }  
+    showTime();  
+    </script>  
+    </body>  
+    </html>  
+</body>
+</html>

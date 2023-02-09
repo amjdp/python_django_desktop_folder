@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dgc.css">
+    <title>Digital clock</title>
+
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            background: black;
+        }
+        .datetime{
+            font-family: "Arial", Helvetica, sans-serif;
+            text-align: center;
+            font-size:72px;
+            background-color: #333333;
+            color: #fff;
+            min-width: 380px;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #date {
+            letter-spacing:3px;
+            font-size:14px;
+            font-family:arial,sans-serif;
+            color:#fff;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="datetime">
+        <span id="h">00</span>
+        <span>:</span>
+        <span id="m">00</span>
+        <span>:</span>
+        <span id="s">00</span>
+        <span id="meridiem">AM</span>
+       </div>
+       <div class="date"></div>
+
+   
+
+    <script>
+        function displayTime(){
+            var dateTime = new Date();
+            var hrs = dateTime.getHours();
+            var min = dateTime.getMinutes();
+            var sec = dateTime.getSeconds();
+            var session = document.getElementById('meridiem');
+        
+            if(hrs >= 12){
+                session.innerHTML = 'PM';
+            }else{
+                session.innerHTML = 'AM';
+            }
+        
+            if(hrs > 12){
+                hrs = hrs - 12;
+            }
+        
+            document.getElementById('h').innerHTML = hrs;
+            document.getElementById('m').innerHTML = min;
+            document.getElementById('s').innerHTML = sec;
+        }
+        setInterval(displayTime, 10);
+
+         
+    </script>
+</body>
+</html>

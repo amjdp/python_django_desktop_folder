@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compare whether 2 arrays are equal or not</title>
+    <script>
+      /*     To compare whether 2 arrays are equal or not    */
+
+      var arr1 = [22, 34, 45, 67];
+      var arr2 = [32, 43, 54, 76];
+      var flag = 0;
+
+      if (arr1.length == arr2.length) {
+        for (var i = 0; i < arr1.length; i++) {
+          if (arr1[i] != arr2[i]) {
+            flag = 0;
+            break;
+          } else {
+            flag = 1;
+          }
+        }
+      }
+      if (flag == 0) {
+        console.log("Not equal");
+      } else {
+        console.log("Arrays are equal");
+      }
+
+      /* ------------------------------------- */
+    </script>
+  </head>
+  <body></body>
+</html>

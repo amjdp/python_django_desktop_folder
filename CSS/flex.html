@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+/* 
+
+      CSS that can be applied to the container:
+
+      display: flexbox | inline-flex;
+      flex-direction: row | row-reverse | column | column-reverse;
+      flex-wrap: nowrap | wrap | wrap-reverse;
+      flex-flow: <‘flex-direction’> || <‘flex-wrap’>
+      justify-content: flex-start | flex-end | center | space-between | space-around;
+      align-items: flex-start | flex-end | center | baseline | stretch;
+      align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+
+      CSS that can be applied to items/elements in the container
+      
+          order: <integer>; */
+     /*   flex-grow: <number>; /* default 0 */  
+     /*   flex-shrink: <number>; /* default 1 */
+     /*   flex-basis: <length> | auto; /* default auto */
+     /*   flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]
+          align-self: auto | flex-start | flex-end | center | baseline | stretch; */
+
+            /* https://flexboxfroggy.com/ */
+
+            /* flex..create layouts..build complete website..easy to use...no need of float...1D... */
+            /* row.....column....at a time row/column conversion */
+            /* parent div...child div */
+
+            /* body{
+                  margin:0;
+              }
+              h1{
+                  margin: 0;
+              }
+              .container{
+                  background-color: rgb(255, 0, 51);
+              }
+              .aaa,.bbb,.ccc{
+                  width: 300px;
+                  height: 200px;
+                  background-color: rgb(25, 208, 16);
+
+                  border:4px solid rgb(189, 196, 183);
+
+                  text-align:center;
+                  padding: 5px;
+              } */
+
+            /* float  */
+
+            /* body{
+                  margin:0;
+              }
+              h1{
+                  margin: 0;
+              }
+              .container{
+                  background-color: rgb(255, 0, 51);
+              }
+              .aaa,.bbb,.ccc{
+                  width: 200px;
+                  height: 200px;
+                  background-color: rgb(25, 208, 16);
+                  border:4px solid rgb(189, 196, 183);
+                  text-align:center;
+                  padding: 5px;
+                  float:left;
+              }
+              .ccc{
+                  float: right;
+              }
+              footer{
+                  clear:both;
+                  background-color: red;
+              } */
+
+            /* flex-row... inside parent div properties(alignment)..child div subproperties  */
+
+            body {
+              margin: 0;
+            }
+            h1 {
+              margin: 0;
+            }
+            .container {
+              background-color: rgb(144, 175, 203);
+              display: flex;
+              /* default row  */
+              /* flex-direction: column;  */
+              /* column  */
+              /* flex-direction:row-reverse; */
+              /* order & alignment will-change  */
+              /* justify-content: center; */
+              /* justify-content: flex-end;  */
+              /* right  */
+              /* justify-content: flex-start; */
+              /* default  */
+              /* margin-left...position */
+              /* justify-content: space-between; */
+              /* justify-content: space-around; */
+              /* justify-content: space-evenly; */
+              height: 300px;
+              /* align-items: center; */
+              /* align-items: flex-end; */
+              /* align-items: flex-start; */
+              /* to fill width automatically..use flex property inside child div */
+              flex-wrap: wrap;
+              /* browser...minimize  */
+            }
+            .aaa,
+            .bbb,
+            .ccc {
+              /* flex: 1; */
+              /* add an extra div...will take full width */
+              width: 200px;
+              /* height: 100px; */
+              background-color: rgb(25, 208, 16);
+              border: 4px solid rgb(189, 196, 183);
+              text-align: center;
+              padding: 5px;
+            }
+            /* .bbb { */
+            /* flex: 2; */
+            /* number is limited...if it reaches the full-width it won't grow further ....no height take full-height */
+            /* } */
+
+            /* remove flex & give width....responsive...browser width change...flex-wrap */
+            /* section 3 ... take full space  */
+            /* .ccc{
+              flex: 1;
+            } */
+
+            .aaa {
+              order: 3;
+            }
+            .bbb {
+              order: 2;
+            }
+            .ccc {
+              order: 1;
+            }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="container">
+      <div class="aaa">
+        <h1>Section 1</h1>
+      </div>
+      <div class="bbb">
+        <h1>Section 2</h1>
+      </div>
+      <div class="ccc">
+        <h1>Section 3</h1>
+      </div>
+    </div>
+
+    <!-- <footer>content</footer>
+    <footer>content</footer>
+    <footer>content</footer>
+    <footer>content</footer> -->
+
+    <!-- lost the flow of website..elements doesn't know from where should they start or end -->
+  </body>
+</html>

@@ -1,0 +1,119 @@
+Difference between two branches in two repositories
+
+https://github.com/amjdp/hms_athira_24_01_2023.git - athira
+https://github.com/suvarnamurali/hms_version2.git - anu
+https://github.com/Mohammed-Rifad/hms-new.git - master
+
+git remote add B {local-path-or-url-of-B}
+git fetch B
+
+remotes/new-origin/anu
+remotes/origin/athira
+
+git diff remotes/new-origin/anu remotes/origin/athira
+
+https://stackoverflow.com/questions/38468700/how-to-merge-branches-in-2-different-repositories
+
+1 students details - vaishnavi, ameya, irshad
+2 social media quotes - amal, rohit
+3 online exam - mushraf, sherin
+4 ecommerce - prasob, vishnu, binshad
+----------------------------------------------------------------------------------------------------------
+How to merge branches in 2 different repositories?
+----------------------------------------------------------------------------------------------------------
+
+I am new to git and I would like to know how to merge Master branch from Sample Project 2 TO UAT branch in Staging/Support. I know its possible to merge different branches under a specific repository, but not sure how merging works across repositories.
+
+What I really want to do is, after finish working on Sample Project 2, I would like to move it to the UAT branch for testing etc, and eventually to the Production branch for release.
+
+Initialization and first merge
+$ git clone -o staging http://staging
+This clones your staging repository. You will need to replace "http://staging" with the correct URL to your Staging/Support repository. You might also want to give a path where to clone the repository as another parameter. The parameter -o makes sure the remote repository is called "staging" which helps to distinguish it from the project repositories later on.
+
+Next step is to add the remote repository to merge from (in this case "Sample Project 2")
+$ git remote add project2 http://sampleproject2
+
+Again, replace "http://sampleproject2" with the URL of the repository "Sample Project 2". You can also change "project2", which is the name of the remote repository, to better fit your project.
+
+After doing that, git branch -r will show the branches from both staging and project2, like this:
+
+$ git branch -r
+staging/Production
+staging/UAT
+project2/Master
+project2/QA
+project2/DEV
+
+Next checkout the branch you want to merge to, like this:
+
+$ git checkout -b staging_UAT --track staging/UAT
+
+This creates a new local branch called staging_UAT which tracks the remote branch UAT from the staging repository. The new branch will be checked out immediately.
+
+Now you have a copy of the UAT branch from staging checked out. You can merge in the changes from project2:
+
+$ git merge project2/Master
+Now all changes from the branch Master of project2 are merged into the current branch (which is staging_UAT). You might want to have a look at git log to see the result. If it fits your expecations, you can push it to the Staging repository:
+
+$ git push staging staging_UAT:UAT
+
+Doing this you push the current state of your local branch staging_UAT to the branch UAT in the remote repository called staging.
+
+You can handle the other projects equally and also add a branch like staging_Production to merge your changes into the Production branch of Staging.
+
+Future merges
+You can use the same clone for future merges without doing all the cloning and branch creation again and again. However in this case you need to update your local information about the remote branches:
+
+$ git checkout staging_UAT
+$ git pull
+First you need to update staging_UAT to match the current version of UAT in the Staging repository. This is done by "pull"ing the changes. As the branch staging_UAT was created with "--track staging/UAT", git knows from where to pull the changes. If UAT on staging is never changed on any other way than this one (meaning: using exactly this local clone to push there from staging_UAT), this is not required.
+
+If UAT is changed on Staging and you do not pull, you will get an error when pushing, saying:
+
+Updates were rejected because the tip of your current branch is behind its remote counterpart.
+The other update affects the Project2 repository:
+
+$ git fetch project2
+Also the branches of the repository project2 might have been changed. As you can see git fetch is used to get those changes. The difference between fetch and pull is that pull will also update your local copy of the branch. As there is no local copy of the project2 branches, fetch is the way to go. (In fact git pull is just a shortcut for git fetch and git merge).
+
+
+Admin login - 
+
+hms_db=# select * from admin_tb;
+ id | admin_id | admin_password
+----+----------+----------------
+(0 rows)
+
+hms_db=# insert into admin_tb values(1,'admin123','admin');
+INSERT 0 1
+
+hms_db=# select * from admin_tb;
+ id | admin_id | admin_password
+----+----------+----------------
+  1 | admin123 | admin
+(1 row)
+
+http://127.0.0.1:8000/hms_admin/admin_login :- Login
+
+Add Department, View Department
+Add Doctor, View Doctor
+Add Staff, View Staff
+
+Doctor Login - username & password
+ Dr Vivek Nambiar
+ 9193
+doc-9193-4565
+
+Patient Register - 
+Patient Login - email & phone
+greeshmaaj@gmail.com
+9685478652
+
+Staff Login - mail & password
+aiswaryakp@gmail.com
+12345
+
+Admin - View Doctor - Consultation
+
+patient appointment
+doctor bookings - 

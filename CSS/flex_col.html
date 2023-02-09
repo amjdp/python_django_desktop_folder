@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      h1 {
+        margin: 0;
+      }
+      .container {
+        background-color: rgb(144, 175, 203);
+        display: flex;
+        height: 400px;
+        flex-direction: column;
+        /* top to bottom  */
+        flex-wrap: wrap;
+       /*  align-items: center; */
+        align-items: flex-start;
+          /* justify-content: space-around;  */
+      }
+      .aaa,
+      .bbb,
+      .ccc {
+        /* width: 200px; */
+        /* don't take full width as width is given */
+        flex: 1; 
+        /* height is taken ... full height */
+        /* flex remove ... default height according to content..width full as flex-direction col  */
+        background-color: rgb(25, 208, 16);
+        border: 4px solid rgb(189, 196, 183);
+        text-align: center;
+        padding: 5px;
+      }
+      
+     
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="aaa">
+        <h1>Section 1</h1>
+      </div>
+      <div class="bbb">
+        <h1>Section 2</h1>
+      </div>
+      <div class="ccc">
+        <h1>Section 3</h1>
+      </div>
+    </div>
+
+    <!-- <footer>content</footer>
+    <footer>content</footer>
+    <footer>content</footer>
+    <footer>content</footer> -->
+
+    <!-- lost the flow of website..elements doesn't know from where should they start or end -->
+  </body>
+</html>

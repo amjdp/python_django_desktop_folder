@@ -1,0 +1,72 @@
+The OS module in Python provides functions for interacting with the operating system. OS comes under Python’s standard utility modules. This module provides a portable way of using operating system-dependent functionality. The *os* and *os.path* modules include many functions to interact with the file system.
+
+
+
+Microsoft Windows [Version 10.0.22621.963]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ATHIRA M J>python
+Python 3.10.5 (tags/v3.10.5:f377153, Jun  6 2022, 16:14:13) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import os
+>>> os.name
+'nt'
+>>> os.getcwd()
+'C:\\Users\\ATHIRA M J'
+>>> os.mkdir("test")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'test'
+>>> os.rmdir("test")
+>>> os.getcwd()
+'C:\\Users\\ATHIRA M J'
+>>> os.mkdir("test")
+>>> os.rmdir("test")
+>>> os.chdir("D:\\")
+>>> os.getcwd()
+'D:\\'
+>>> import sys
+>>> sys.path()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'list' object is not callable
+>>> print(sys.path)
+['', 'C:\\Users\\ATHIRA M J\\AppData\\Local\\Programs\\Python\\Python310\\python310.zip', 'C:\\Users\\ATHIRA M J\\AppData\\Local\\Programs\\Python\\Python310\\DLLs', 'C:\\Users\\ATHIRA M J\\AppData\\Local\\Programs\\Python\\Python310\\lib', 'C:\\Users\\ATHIRA M J\\AppData\\Local\\Programs\\Python\\Python310', 'C:\\Users\\ATHIRA M J\\AppData\\Local\\Programs\\Python\\Python310\\lib\\site-packages']
+>>> print(sys.version())
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object is not callable
+>>> print(sys.version)
+3.10.5 (tags/v3.10.5:f377153, Jun  6 2022, 16:14:13) [MSC v.1929 64 bit (AMD64)]
+>>> sys.maxsize()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'int' object is not callable
+>>> print(sys.maxsize)
+9223372036854775807
+>>> import math
+>>> print(math.e)
+2.718281828459045
+>>> print(math.pi)
+3.141592653589793
+>>> print(math.radians(30))
+0.5235987755982988
+>>> print(math.sin(30))
+-0.9880316240928618
+>>> print(math.degrees(30))
+1718.8733853924696
+>>> print(math.degrees(180))
+10313.240312354817
+>>> math.pow(2,4)
+16.0
+>>> math.sin(30)
+-0.9880316240928618
+>>> math.sqrt(100)
+10.0
+>>> math.ceil(20.9)
+21
+>>> math.floor(20.4)
+20
+>>> sys.exit()
+
+C:\Users\ATHIRA M J>

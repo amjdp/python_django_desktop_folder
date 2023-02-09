@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find number in the given Array</title>
+
+    <script>
+      /********* To find a number in the given array ***********/
+
+      //   var found = 0;
+      //   var array = [23, 67, 89, 76, 98, 45, 67, 89];
+      //   var num = Number(prompt("Enter the Number"));
+
+      //   for (var i = 0; i < array.length; i++) {
+      //     if (array[i] == num) {
+      //       found = 1;
+      //     }
+      //   }
+      //   if (found == 1) {
+      //     // console.log("Number found");
+      //     document.write("Number found");
+      //   } else {
+      //     document.write("Number not found");
+      //   }
+
+      /* ------------------------------------- */
+
+      const arr = [3, 5, 4, 2, 7];
+      const item = 4;
+
+      const index = arr.indexOf(item);
+
+      if (index !== -1) {
+        document.write(
+          `Element ${item} is found at index ${index} in the array`
+        );
+      } else {
+        document.write(`Element ${item} not found in the array.`);
+      }
+
+      //  ( OR )
+
+      //   if (index === -1) {
+      //     document.write(`Element ${item} not found in the array`);
+      //   } else {
+      //     document.write(`Element ${item} is found at index ${index} in the array`);
+      //   }
+
+      // Remarks :
+
+      // The indexOf() method returns the first index (position) of a specified value.
+
+      // The indexOf() method returns -1 if the value is not found.
+
+      // The indexOf() method starts at a specified index and searches from left to right.
+
+      // By default the search starts at the first element and ends at the last.
+
+      // Negative start values counts from the last element (but still searches from left to right).
+
+    </script>
+    
+  </head>
+
+  <body></body>
+</html>

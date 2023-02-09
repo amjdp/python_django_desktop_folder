@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navi {
+            position: sticky;
+            height: 100px;
+            background-color: #144255;
+            top: 0%;
+            z-index: 1;
+        }
+
+        .navi li {
+            display: inline;
+            padding: 90px;
+            position: relative;
+            top: 13px;
+            color: white;
+
+        }
+
+        .btn {
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            background-color: red;
+
+        }
+
+        .btn:hover {
+            background-color: chartreuse;
+        }
+
+        body {
+            height: 3000px;
+            background-color: white;
+        }
+
+        .container {
+            height: 700px;
+            background-color: #144255;
+
+        }
+
+        .boxes {
+            background-color: #144255;
+            height: 500px;
+            width: 728px;
+            /* display: inline; */
+            color: aliceblue;
+            text-align: center;
+            padding-top: 150px;
+            padding-left: 0px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 25px;
+
+        }
+
+        #soft {
+
+            text-align: left;
+            padding-left: 280px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 22px;
+        }
+
+        p {
+            padding-left: 245px;
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 19.5px;
+        }
+
+        .image {
+            height: 500px;
+            width: 728px;
+            background-color: #144255;
+            /* display: inline; */
+            position: relative;
+            left: 728px;
+            bottom: 500px;
+            background-image: url('https://www.baabtra.com/assets/images/company/programming-courses-in-calicut.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-left: 0px;
+            margin-top: 0px;
+
+
+
+        }
+
+        .oray {
+            height: 250px;
+            width: 1000px;
+            background-color: red;
+            position: absolute;
+            top: 700px;
+            margin-left: 250px;
+            border-radius: 30px;
+            /* text-align:right; */
+
+        }
+
+        .img {
+            position: relative;
+            left: 40px;
+            top: 45px;
+            /* display: inline; */
+        }
+
+        #affiliation {
+            position: absolute;
+            left: 250px;
+            top: 50px;
+            display: inline;
+            color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+        }
+
+        #educ {
+            position: absolute;
+            left: 230px;
+            top: 70px;
+            color: white;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 35px;
+        }
+
+        #bro {
+            padding-left: 685px;
+            padding-top: 24px;
+            width: 500px;
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+        }
+
+        .btn:hover {
+            text-decoration: none;
+            background-color: #144255;
+            border: 2px black solid;
+            border-radius: 50px;
+
+
+        }
+
+
+
+
+
+
+
+        /* #parent{
+    height: 1000px;
+    background-color: white;
+} */
+        .second {
+            width: 100%px;
+            display: flex;
+            /* flex-direction: row; */
+            justify-content: space-between;
+            /* position: relative; */
+            /* margin-left: 590px; */
+            padding-left: 451px;
+            text-align: center;
+
+
+
+
+        }
+
+        .training {
+            width: 200px;
+            height: 200px;
+            border: 2px black solid;
+            /* display: inline; */
+            /* padding: 0px; */
+            position: relative;
+            left: -190px;
+            /* top: 200px; */
+            box-shadow: 0 4px 15px black;
+            transition: 0.5s linear;
+
+
+
+
+        }
+
+        .size {
+            width: 150px;
+        }
+
+        .training:hover {
+            box-shadow: 0 4 18px black;
+            background-color: blue;
+            transform: translateY(-20px);
+
+        }
+
+        /* .expert{ */
+
+
+
+
+        /* } */
+        #heading {
+            color: red;
+            position: absolute;
+            top: 950px;
+            left: 390px;
+
+        }
+
+        #content {
+            color: #144255;
+            position: relative;
+            /* top: 970px; */
+            top: 190px;
+            left: 60px;
+            font-size: 29px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+
+        /* #third{ */
+
+        /* } */
+        .left_img {
+            height: 500px;
+            width: 728px;
+            background-image: url('https://www.baabtra.com/assets/images/company/explore-course.png');
+            background-size: 500px;
+            background-repeat: no-repeat;
+            position: relative;
+            left: 50px;
+            top: 290px;
+            margin-left: 100px;
+
+        }
+
+        .right_cont {
+            height: 500px;
+            width: 728px;
+            /* background-color: #144255; */
+            position: relative;
+            left: 600px;
+            bottom: 350px;
+
+
+        }
+
+        #expo {
+            color: black;
+            text-align: left;
+            margin-top: 80px;
+            font-size: 18px;
+        }
+
+        #skills {
+            font-size: 29px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #144255;
+        }
+
+        .red {
+            color: red;
+            padding-top: 50px;
+            font-size: 20px;
+        }
+
+        #pos {
+            position: absolute;
+            top: 70px;
+        }
+
+        .red span {
+            padding-top: 300px;
+            font-size: 15px;
+            color: black;
+        }
+
+        .features {
+            display: flex;
+
+        }
+
+        .show {
+            background-color: aqua;
+            height: 300px;
+            width: 300px;
+            /* display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; */
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="parent"> -->
+    <div class="navi">
+        <ul>
+            <li><img src="https://www.baabtra.com/assets/images/logo.png" alt="" width="190px"></li>
+            <li>Programs</li>
+            <li>Placements</li>
+            <li>About us</li>
+            <li><a href="" class="btn"> Enquire Now</li></a>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="boxes">---LEARN SOFTWARE
+            <div id="soft">
+                <h3>Getting a Software Job is So Easy <br> Now with our IT Internship <br>Programs.</h3>
+            </div>
+            <p>Learn programming from Kerala's most trusted software <br> training company with the highest placement
+                record. <br>Enroll in software courses and internship programs in <br>Python, Flutter, Angular and PHP
+                to start your career.</p>
+        </div>
+        <div class="image"></div>
+        <div class="oray"><img src="https://www.baabtra.com/assets/images/certifications/Oray-Logo.png" alt=""
+                width="150px" class="img">
+            <h3 id="affiliation">----WE ARE AFFILIATED WITH</h3>
+            <h4 id="educ">Oray Education London, UK</h4>
+            <div id="bro"><a href="" class="btn">Download Brochure</a></div>
+        </div>
+    </div>
+
+
+    <!-- </div> -->
+    <div class="expert">
+        <p id="heading">EXPERTISE IN EDUCATION</p>
+        <p id="content">Ed-tech company with 11 years of industry leadership in training and <br>placements, holding
+            highest number of placement track in Malabar.</p>
+
+
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="second">
+        <div class="training">Python Training
+            <img src="https://www.baabtra.com/assets/images/course/python-course-training-calicut-kerala.png" alt=""
+                class="size">
+        </div>
+        <div class="training">Flutter Training
+            <img src="https://www.baabtra.com/assets/images/course/flutter-course-training-calicut-kerala.png" alt=""
+                class="size">
+        </div>
+        <div class="training">Angular Training</div>
+        <div class="training">PHP Training</div>
+    </div>
+    <div id="third">
+        <div class="left_img"></div>
+        <div class="right_cont">
+            <p id="expo">EXPLORE OUR INTERNSHIP PROGRAMME</p>
+            <p id="skills">Learn new skills to go ahead of <br> your career</p>
+            <div id="pos">
+                <p class="red">Join Us <br>
+                    <span>It doesn’t matter how talented you are. Join specialized job oriented <br>software courses &
+                        training programs and just learn the in-demand skills <br> to be a better programmer.</span>
+                </p>
+                <p class="red">Get Skilled for Job <br>
+                    <span> Get trained and skilled under the guidance of expert software engineers <br>and be ready for
+                        the jobs</span>
+                </p>
+                <p class="red">Get Hired<br>
+                    <span> Showcase your profile with skills acquired and get hired by your dream company.</span>
+
+                </p>
+            </div>
+
+        </div>
+        <!-- <div class="features">
+    <div class="show"><p>CS Talent Show</p></div>
+    <div class="show"><p>CS Talent Show</p></div>
+    <div class="show"><p>CS Talent Show</p></div>
+</div> -->
+
+
+
+
+
+</body>
+
+</html>

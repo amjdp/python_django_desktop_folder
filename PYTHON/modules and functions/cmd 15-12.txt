@@ -1,0 +1,74 @@
+Microsoft Windows [Version 10.0.22621.963]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\ATHIRA M J>python
+Python 3.10.5 (tags/v3.10.5:f377153, Jun  6 2022, 16:14:13) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import os
+>>> os.name
+'nt'
+>>> os.environ
+environ({'ALLUSERSPROFILE': 'C:\\ProgramData', 'APPDATA': 'C:\\Users\\ATHIRA M J\\AppData\\Roaming', 'CM2012DIR': 'C:\\Program Files (x86)\\Common Files\\Autodesk Shared\\Materials\\', 'COMMONPROGRAMFILES': 'C:\\Program Files\\Common Files', 'COMMONPROGRAMFILES(X86)': 'C:\\Program Files (x86)\\Common Files', 'COMMONPROGRAMW6432': 'C:\\Program Files\\Common Files', 'COMPUTERNAME': 'DESKTOP-N271D42', 'COMSPEC': 'C:\\WINDOWS\\system32\\cmd.exe', 'DRIVERDATA': 'C:\\Windows\\System32\\Drivers\\DriverData', 'FPS_BROWSER_APP_PROFILE_STRING': 'Internet Explorer', 'FPS_BROWSER_USER_PROFILE_STRING': 'Default', 'HOMEDRIVE': 'C:', 'HOMEPATH': '\\Users\\ATHIRA M J', 'ILBDIR': 'C:\\Program Files (x86)\\Common Files\\Autodesk Shared\\Materials\\', 'ILLDIR': 'C:\\Program Files (x86)\\Common Files\\Autodesk Shared\\Materials\\', 'ILMDIR': 'C:\\Program Files (x86)\\Common Files\\Autodesk Shared\\Materials\\', 'LOCALAPPDATA': 'C:\\Users\\ATHIRA M J\\AppData\\Local', 'LOGONSERVER': '\\\\DESKTOP-N271D42', 'NUMBER_OF_PROCESSORS': '8', 'NVM_HOME': 'C:\\Users\\ATHIRA M J\\AppData\\Roaming\\nvm', 'NVM_SYMLINK': 'C:\\Program Files\\nodejs', 'ONEDRIVE': 'C:\\Users\\ATHIRA M J\\OneDrive', 'OS': 'Windows_NT', 'PATH': 'C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\Common Files\\Autodesk Shared\\;C:\\Program Files\\Git\\cmd;C:\\Users\\ATHIRA M J\\AppData\\Roaming\\nvm;C:\\Program Files\\nodejs;C:\\Program Files\\nodejs\\;C:\\Users\\ATHIRA M J\\AppData\\Local\\Programs\\Python\\Python310\\Scripts\\;C:\\Users\\ATHIRA M J\\AppData\\Local\\Programs\\Python\\Python310\\;C:\\Users\\ATHIRA M J\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ATHIRA M J\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\ATHIRA M J\\AppData\\Roaming\\npm;C:\\Program Files\\nodejs;C:\\Users\\ATHIRA M J\\AppData\\Roaming\\nvm;D:\\nvm-setup (1);C:\\sqlite3;', 'PATHEXT': '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC', 'PROCESSOR_ARCHITECTURE': 'AMD64', 'PROCESSOR_IDENTIFIER': 'AMD64 Family 23 Model 24 Stepping 1, AuthenticAMD', 'PROCESSOR_LEVEL': '23', 'PROCESSOR_REVISION': '1801', 'PROGRAMDATA': 'C:\\ProgramData', 'PROGRAMFILES': 'C:\\Program Files', 'PROGRAMFILES(X86)': 'C:\\Program Files (x86)', 'PROGRAMW6432': 'C:\\Program Files', 'PROMPT': '$P$G', 'PSMODULEPATH': 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules', 'PUBLIC': 'C:\\Users\\Public', 'SESSIONNAME': 'Console', 'SYSTEMDRIVE': 'C:', 'SYSTEMROOT': 'C:\\WINDOWS', 'TEMP': 'C:\\Users\\ATHIRA~1\\AppData\\Local\\Temp', 'TMP': 'C:\\Users\\ATHIRA~1\\AppData\\Local\\Temp', 'USERDOMAIN': 'DESKTOP-N271D42', 'USERDOMAIN_ROAMINGPROFILE': 'DESKTOP-N271D42', 'USERNAME': 'ATHIRA M J', 'USERPROFILE': 'C:\\Users\\ATHIRA M J', 'WINDIR': 'C:\\WINDOWS'})
+>>>
+KeyboardInterrupt
+>>> print(os.environ["TMP"])
+C:\Users\ATHIRA~1\AppData\Local\Temp
+>>> os.getenv("TMP")
+'C:\\Users\\ATHIRA~1\\AppData\\Local\\Temp'
+>>>  os.environ["TMP2"]
+  File "<stdin>", line 1
+    os.environ["TMP2"]
+IndentationError: unexpected indent
+>>> print(os.getenv("TMP2"))
+None
+>>>  os.getcwd()
+  File "<stdin>", line 1
+    os.getcwd()
+IndentationError: unexpected indent
+>>> os.getcwd()
+'C:\\Users\\ATHIRA M J'
+>>> os.chdir(r"c:\Users\mike\Documents")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'c:\\Users\\mike\\Documents'
+>>> os.chdir(r"c:\Users\ATHIRA M J\Documents")
+>>> os.chdir("d:\\")
+>>> os.getcwd()
+'d:\\'
+>>> os.chdir("C:\\Users\\ATHIRA M J")
+>>> os.getcwd()
+'C:\\Users\\ATHIRA M J'
+>>> os.mkdir("test")
+>>> path = 'C:\\Users\\ATHIRA M J\\Documents\pytest'
+>>> os.mkdir(path)
+>>> path = 'C:\\Users\\ATHIRA M J\\Documents\pytest\2022\12\14'
+>>> os.makedirs(path)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "C:\Users\ATHIRA M J\AppData\Local\Programs\Python\Python310\lib\os.py", line 225, in makedirs
+    mkdir(name, mode)
+OSError: [WinError 123] The filename, directory name, or volume label syntax is incorrect: 'C:\\Users\\ATHIRA M J\\Documents\\pytest\x822\n\x0c'
+>>> path = 'C:\\Users\\ATHIRA M J\\Documents\\pytest\\2022\\12\\14'
+>>> os.getcwd()
+'C:\\Users\\ATHIRA M J'
+>>> os.makedirs(path)
+>>> os.remove("test.txt")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'test.txt'
+>>> os.rmdir("pytest")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'pytest'
+>>> os.getcwd()
+'C:\\Users\\ATHIRA M J'
+>>> os.rmdir("pytest")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'pytest'
+>>> os.rmdir("14")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+FileNotFoundError: [WinError 2] The system cannot find the file specified: '14'
+>>> os.mkdir("cybersquare")
+>>>

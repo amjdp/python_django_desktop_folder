@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+        <script>
+
+            // Javascript implementation to calculate the
+            // electricity bill
+            
+            // Function to calculate the
+            // electricity bill
+            function calculateBill(units)
+            {
+                
+                // Condition to find the charges
+                // bar in which the units consumed
+                // is fall
+                if (units <= 100)
+                {
+                    return units * 10;
+                }
+                else if (units <= 200)
+                {
+                    return (100 * 10)
+                        + (units - 100)
+                            * 15;
+                }
+                else if (units <= 300)
+                {
+                    return (100 * 10)
+                        + (100 * 15)
+                        + (units - 200)
+                            * 20;
+                }
+                else if (units > 300)
+                {
+                    return (100 * 10)
+                        + (100 * 15)
+                        + (100 * 20)
+                        + (units - 300)
+                            * 25;
+                }
+                return 0;
+            }
+                
+            // Driver Code
+            var units = 250;
+            
+            document.write(calculateBill(units));
+            
+            // This code is contributed by Khushboogoyal499
+            
+            </script>
+            
+</body>
+</html>
