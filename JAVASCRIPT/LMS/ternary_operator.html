@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ternary Operator</title>
+  </head>
+  <body>
+    <!-- A ternary operator can be used to replace an if..else statement in certain situations. -->
+    <!-- What is a Ternary operator?
+A ternary operator evaluates a condition and executes a block of code based on the condition.
+
+Its syntax is:
+
+condition ? expression1 : expression2
+The ternary operator evaluates the test condition.
+
+If the condition is true, expression1 is executed.
+If the condition is false, expression2 is executed.
+The ternary operator takes three operands, hence, the name ternary operator. 
+It is also known as a conditional operator. -->
+
+    <script>
+      // program to check pass or fail
+
+      let marks = prompt("Enter your marks :");
+
+      // check the condition
+      let result = marks >= 40 ? "pass" : "fail";
+
+      console.log(`You ${result} the exam.`);
+
+      console.log("***********");
+      // check the age to determine the eligibility to vote
+      let age = 15;
+      let res;
+
+      if (age >= 18) {
+        res = "You are eligible to vote.";
+      } else {
+        res = "You are not eligible to vote yet.";
+      }
+
+      console.log(res);
+
+      console.log("***********");
+
+      // ternary operator to check the eligibility to vote
+      let _age = 28;
+      let _result =
+        _age >= 18
+          ? "You are eligible to vote."
+          : "You are not eligible to vote yet";
+      console.log(_result);
+
+      console.log("Nested ternary operators");
+
+      // program to check if number is positive, negative or zero
+      let a = 3;
+      let rlt = a >= 0 ? (a == 0 ? "zero" : "positive") : "negative";
+      console.log(`The number is ${rlt}.`);
+    </script>
+  </body>
+</html>

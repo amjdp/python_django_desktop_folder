@@ -21,6 +21,8 @@ def odd_even(num):
         print(num,"is Odd")
 
 
+# 2 3 5 7 11 13 17 19
+
 # prime(3)
 # prime(11)
 # odd_even(7)

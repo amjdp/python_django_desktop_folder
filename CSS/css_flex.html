@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex-container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .flex-item {
+        /* flex-grow: 1; */
+        flex-shrink: 0;
+        flex-basis: 400px;
+        background-color: lightblue;
+        padding: 10px;
+        border: 1px solid blue;
+        height: 500px;
+      }
+      .a {
+        flex-shrink: 3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item a">
+        Item 1 Lorem ipsum dolor sit,veniam minus officiis recusandae mollitia?
+      </div>
+      <div class="flex-item">Item 2</div>
+      <div class="flex-item">Item 3</div>
+      <div class="flex-item">Item 2</div>
+      <div class="flex-item">Item 3</div>
+    </div>
+
+    <!-- 
+
+        In CSS flexbox, there are several properties that can be applied to child elements (also known as flex items) to control their behavior within a flex container. Here are some commonly used flexbox properties for child elements:
+
+flex-grow: Specifies how much the flex item can grow to fill the available space. It accepts a unitless value, where a higher value indicates a greater ability to grow.
+
+flex-shrink: Defines how much the flex item can shrink if necessary. It also accepts a unitless value, where a higher value means the item will shrink more in relation to other items.
+
+flex-basis: Specifies the initial size of the flex item before any remaining space is distributed. It can be set to a specific length (e.g., px, em, %) or to auto to use the item's intrinsic size.
+
+flex: A shorthand property that combines flex-grow, flex-shrink, and flex-basis in a single declaration. The values are defined in the order of flex-grow, flex-shrink, and flex-basis. For example: flex: 1 0 auto;.
+
+align-self: Overrides the default alignment specified by the parent flex container for a specific flex item. It accepts values like flex-start, flex-end, center, baseline, or stretch.
+
+order: Determines the order in which the flex items are displayed within the flex container. It accepts a positive or negative integer, with lower values appearing first.
+
+These properties are applied to individual child elements within a flex container to control their sizing, positioning, and behavior. It's important to note that these properties work in conjunction with the properties applied to the parent flex container to achieve the desired layout and alignment.
+
+     -->
+  </body>
+</html>

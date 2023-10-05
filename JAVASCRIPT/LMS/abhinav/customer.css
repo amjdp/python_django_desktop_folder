@@ -1,0 +1,31 @@
+.header{
+    width: 400px;
+    height: 500px;
+    background-color: aquamarine;
+    margin:20px 500px;
+}
+.lin{
+    font-size: 25px;
+    font-weight: 600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: red;
+
+}
+.tb{
+    margin-top:-180px;
+    width: 420px;
+    height: 300px;
+    margin-left: 10px;
+}
+.header h1{
+    margin-left: 80px;
+    color: white;
+}
+.btn-1{
+    width: 150px;
+    height: 50px;
+    border-radius: 50px;
+    margin-left: 110px;
+    color: blueviolet;
+    background-color:lightgreen;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Comparison Operators</title>
+  </head>
+  <body>
+    <h1>JavaScript Comparison Operators</h1>
+    <!-- Comparison operators compare two values and return a boolean value, either true or false. For example, -->
+
+    <!-- 
+        
+        Operator	Description	Example
+
+        ==	    Equal to: returns true if the operands are equal	                        x == y
+        !=	    Not equal to: returns true if the operands are not equal	                x != y
+        ===	    Strict equal to: true if the operands are equal and of the same type	    x === y
+        !==	    Strict not equal to: true if the operands are equal but of different        x !== y
+                type or not equal at all	
+        >	    Greater than: true if left operand is greater than the right operand	    x > y
+        >=	    Greater than or equal to: true if left operand is greater than or   	    x >= y
+                equal to the right operand
+        <	    Less than: true if the left operand is less than the right operand	        x < y
+        <=	    Less than or equal to: true if the left operand is less than or             x <= y
+                equal to the right operand	 
+    
+    -->
+
+    <script>
+      const a = 3,
+        b = 2;
+      console.log(a > b); // true
+
+      // equal operator
+      console.log(2 == 2); // true
+      console.log(2 == "2"); // true
+
+      // not equal operator
+      console.log(3 != 2); // true
+      console.log("hello" != "Hello"); // true
+
+      // strict equal operator
+      console.log(2 === 2); // true 
+      console.log(2 === "2"); // false
+
+      // strict not equal operator
+      console.log(2 !== "2"); // true
+      console.log(2 !== 2); // false
+
+      const x = 10,
+        y = 20;
+
+    console.log(x==10);
+    console.log(x==y);
+    console.log(x!=y);
+    console.log(x!=10);
+    console.log(x>0);
+    console.log(x>y);
+    console.log(x<10);
+    console.log(x<=10);
+    console.log(y>=10);
+    console.log(x==='10');
+    console.log(x!=='10');
+    </script>
+  </body>
+</html>

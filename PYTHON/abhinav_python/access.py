@@ -29,7 +29,7 @@ class Accounts:
 
 acc = Accounts(132454, "Jose" , 20000, 12345)
 print(acc.get_amt())
-print()
+# print()
 acc.set_amt(10000)
 print(acc.get_amt())
 

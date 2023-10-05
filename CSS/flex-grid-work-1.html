@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      header {
+        height: 150px;
+        background-color: #ff4945;
+      }
+
+      .main {
+        height: 300px;
+        color: white;
+        background-color: #ffa931;
+      }
+
+      .sidebar {
+        height: 300px;
+        color: white;
+        background-color: #9b0579;
+      }
+
+      footer {
+        height: 100px;
+        color: white;
+        background-color: #00778f;
+      }
+      /* Page Layout */
+
+      /*
+      step 1
+
+      We will start with the solution we would use with Flexbox. 
+      We will add a display: flex to the container, and we will position its child elements vertically. 
+      This will cause sections to be placed under one another.
+
+      */
+
+      .container {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* 
+      Next, we need the main section and sidebar side by side. 
+      As flex containers usually go in one direction, we will add a wrapper to our HTML, which will have both the main section and the sidebar. 
+      We will add a display to this wrapper: flex, but this time in a horizontal direction.
+      */
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+
+    /*
+    We only have to decide the proportions of both the main section and the sidebar. For example, the main section will have four times the size of the sidebar, thus we will add a margin to the first so there is some space between each section.
+    */
+
+    .main {
+        flex: 4;
+        margin-right: 40px;
+    }
+    .sidebar {
+       flex: 1;
+    }
+
+    /*
+    Our header has several links and a button; and we want the links to be justified to the left and the button to the right.
+    */
+
+    header {
+        display: flex;
+      justify-content: space-around;
+    }
+
+    /*
+    Once we have both the list of links and the button in their respective position, we will make all the elements of the navigation list align horizontally.
+    */
+    header nav ul li {
+        display: inline;
+
+    }
+
+   
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">
+                <img src="/css-flex-work/logoipsum-289.svg" alt="" style="padding-top: 20px;">
+            </a>
+            </li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </nav>
+        <button>Button</button>
+      </header>
+
+      <div class="wrapper">
+      <section class="main">
+        <h2>Main Content</h2>
+      </section>
+
+      <aside class="sidebar">
+        <h3>Sidebar</h3>
+      </aside>
+    </div>
+
+      <footer>
+        <h3>Footer</h3>
+        <p>Diseñado con cariño ; | SiloCreativo.2017</p>
+      </footer>
+    </div>
+  </body>
+</html>

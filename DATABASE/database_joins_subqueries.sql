@@ -76,6 +76,11 @@ SELECT * FROM bill_items;
 (5 rows)
 
 SELECT pk_bill_id, bill_date, customer_name, SUM(item_price * item_quantity) 
+AS total_bill FROM bill_items INNER JOIN bills ON bill_items.fk_bill_id = bills.pk_bill_id 
+GROUP BY pk_bill_id ORDER BY pk_bill_id;
+
+
+SELECT pk_bill_id, bill_date, customer_name, SUM(item_price * item_quantity) 
 AS total_bill FROM bill_items INNER JOIN bills ON pk_bill_id = fk_bill_id 
 GROUP BY pk_bill_id ORDER BY pk_bill_id;
 
@@ -116,6 +121,9 @@ SELECT * FROM stocks;
 (3 rows)
 
 SELECT product_name,quantity FROM products LEFT JOIN stocks ON pk_products_id = fk_product_id;
+
+SELECT product_name,quantity FROM products LEFT JOIN stocks ON products.pk_products_id = stocks.fk_product_id;
+
     product_name     | quantity
 ---------------------+----------
  Classmate Notebook  |      300
@@ -151,3 +159,44 @@ SELECT * FROM products WHERE fk_category_id IN (SELECT pk_category_id FROM categ
               2 | Maybelline eyeliner |              3 | Black color, water proof |    45 | 2020-06-09
 (1 row)
 
+
+
+
+
+-- create a database named school
+
+-- create tables for storing the details of classes, subjects, students, teachers, examinations
+
+-- classes table should contain the columns pk_class_id, class_name
+-- subjects table should contain the columns pk_subject_id, subject
+-- students table should contain the columns pk_student_id, s_name, date_of_birth, contact_number, name_of_guardian, fk_class_id
+-- teachers table should contain the columns pk_teacher_id, t_name, fk_subject_id
+-- examinations table should contain the columns pk_exam_id, exam_name, date, fk_subject_id 
+
+-- insert data into tables 
+
+-- Retrieve Students from a Specific Class
+-- Retrieve Exams for a Specific Subject
+-- Retrieve Teachers for a Specific Subject
+-- Retrieve Students Born Before a Certain Date
+-- Retrieve Exams After a Specific Date
+-- Retrieve the first 3 students from the "students" table
+-- Retrieve a list of distinct subjects from the "examinations" table
+-- Retrieve Students Whose Guardian Names Start with "J"
+-- Retrieve Students Whose Contact Number Start with 98
+-- Retrieve Students Whose Names End with "e"
+-- Retrieve Teachers Whose Names Contain "****"
+-- Retrieve Subjects That Start with "M" and End with "s"
+-- Retrieve Exams with Names Containing "*****"
+-- Retrieve Guardians Whose Names Are Exactly Three Characters Long
+
+-- create a table for storing marks of students
+-- student_marks table should contain the columns pk_mark_id, fk_student_id, fk_exam_id, marks_obtained
+-- insert datas to the student_marks table
+-- Using SUM to Calculate Total Marks for Each Student:
+-- Using AVG to Calculate Average Marks for Each Exam:
+-- Using COUNT to Count Students in Each Class:
+
+-- Using GROUP BY and SUM to Calculate Total Marks for Each Student:
+-- Using HAVING to Filter Students with Total Marks Above 200:
+-- Using GROUP BY and ORDER BY to Display Total Marks for Each Student in Each Exam:

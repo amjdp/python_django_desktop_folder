@@ -1,0 +1,240 @@
+.head{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    background-color: rgb(44, 44, 90);
+    position: sticky;
+    top: 0px;
+    z-index: 1
+}
+
+.names{
+    color: white;
+    font-size: 20px;
+}
+.enquire-btn{
+    position: relative;
+    margin-top: 13px;
+    border: 0;
+    background-color: rgb(252, 14, 53);
+    height: 50px;
+    width: 100px;
+    color: white;
+}
+#logo{
+    position: relative;
+    left: 30px;
+    top: 10px;
+
+}
+.first{
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: rgb(44, 44, 90);
+    top: 50px;
+}
+#learn{
+    color: white;
+    position: relative;
+    left: 90px;
+    font-size: 20px;
+}
+#getting{
+    color: white;
+    font-size: 40px;
+    position: relative;
+    left: 30px;
+    
+}
+#programming{
+    color: rgba(184, 206, 252, 0.801);
+    font-size: 25px;
+    position: relative;
+    left: 30px;
+    
+    
+}
+.two{
+    margin-top: 50px;
+    margin-bottom: 90px;
+}
+#course{
+    position: relative;
+    left: 35px;
+    top: 10px;
+}
+#expertise{
+     color: rgb(206, 10, 10);
+     text-align: center;
+     font-size: 20px;
+
+}
+#ed{
+    color: rgb(24, 24, 83);
+    text-align: center;
+    font-size: 35px;
+}
+#python{
+    margin-left: 110px;  
+
+}
+#space{
+    position: relative ;
+    top: 50px;
+
+}
+.second{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 150px;
+}
+.explore{
+    color: red;
+}
+#int{
+    color: rgb(77, 77, 146);
+    font-size: 17px;
+    position: relative;
+    left: 20px;
+
+}
+#lea{
+    color: rgb(23, 23, 70);
+    font-size: 35px;
+}
+.details{
+    color: rgb(28, 28, 49);
+    font-size: 20px;
+}
+.talent{
+    display: grid;
+    grid-template-columns:  30% 30% 30%;
+    margin-top: 150px;
+    text-align: center;
+    margin-left: 40px;
+    margin-bottom: 150px;
+}
+.show{
+    color: rgb(20, 20, 68);
+    font-size: 30px;
+}
+.digital{
+    color: rgb(107, 107, 165);
+    font-size: 20px;
+}
+.success{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#stories{
+    color: rgb(114, 114, 211);
+    font-size: 15px;
+    margin-left: 65px;
+    margin-top: 150px;
+}
+#candidate{
+     color: rgb(20, 20, 68);
+     font-size: 40px;
+     margin-left: 60px;
+}
+#placement{
+    margin-top: 180px;
+    margin-left: 550px;
+}
+.students{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 80px;
+    
+    
+}
+#bg{
+    background-color: rgb(227, 227, 255);
+    padding-bottom: 60px;
+}
+.red{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+    background-color: rgb(228, 31, 74);
+}
+.happy{
+    margin-top: 50px;
+    margin-bottom: -5px;
+}
+.plus{
+    font-size: 60px;
+    margin-bottom: 0px;
+
+}
+.min{
+    font-size: 20px;
+     margin-bottom: 60px    ;
+}  
+#pr{
+    color: rgb(228, 36, 36);
+    text-align: center;
+    margin-top: 80px;
+
+}
+#or{
+    color: rgb(25, 25, 95);
+    text-align: center;
+    font-size: 40px;
+    margin-top: 0px;
+}
+#org{
+    margin-left: 90px;
+
+}
+#hig{
+    color: rgb(228, 36, 36);
+    text-align: center;
+    margin-top: 120px;
+}
+#acc{
+    color: rgb(26, 26, 71);
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10px;
+}
+#baa{
+    color: rgb(121, 121, 192);
+    text-align: center;
+    font-size: 20px;
+    margin-left: 60px;
+    margin-right: 80px;
+    margin-top: 60px;
+}
+#accr{
+    margin-left: 90px;
+    margin-top: 90px;
+    margin-bottom: 90PX;
+}
+.foot{
+    display: grid;
+    grid-template-columns: 30% 20% 20% 30% ;
+    background-color: rgb(3, 6, 26);
+    
+}
+.list{
+    list-style-type: none;
+    margin: 5px;
+    padding: 0;
+    color: white;
+}
+.white{
+    color: white;
+    font-size: 23px;
+}
+#the{
+    color: white;
+}
+#best{
+    margin-left: 30px;
+}
+.cont{
+    display: grid;
+    grid-template-columns: 20% 80%;
+}

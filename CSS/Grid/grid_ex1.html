@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-container{
+        display:grid;
+        background-color: green;
+        grid-gap:10px;
+        grid-template-columns: 495px 495px 495px;
+        grid-template-rows: 200px 200px 200px;
+        padding: 5px;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        
+
+    }
+    .grid-item1,.grid-item2,.grid-item3,.grid-item4,.grid-item5, .grid-item6{
+        background-color: green;
+        color: white;
+        font-weight: 900;
+        font-size: 50px;
+        border:3px solid white;
+        padding: 10px;
+    }
+    .grid-item1{
+        /* grid-area: row-start / column-start / row-end / column-end; */
+        /* grid-column-start: 1;
+        grid-column-end: 4; */
+        grid-area: 1/1/1/4;
+    }
+    .grid-item2{
+        grid-area: 2/1/4/1;
+        /* grid-row-start: 2;
+        grid-row-end: 4; */
+    }
+    .grid-item5{
+        grid-area: 3/2/4/4;
+        /* grid-column-start: 2;
+        grid-column-end: 4; */
+    }
+    .grid-item6{
+        grid-area: 4/1/5/4;
+    }
+
+    </style>
+    
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item1">Heading</div>
+        <div class="grid-item2">Menu</div>
+        <div class="grid-item3">Section 1</div>
+        <div class="grid-item4">Section 2</div>
+        <div class="grid-item5">Section 3</div>
+        <div class="grid-item6">Footer</div>
+    </div>
+</body>
+</html>

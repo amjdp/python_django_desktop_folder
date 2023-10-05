@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer with Progress Bar</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+
+    <style>
+        .timer-container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 20px;
+            background-color: #ccc;
+            position: relative;
+        }
+        
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        
+        .message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            display: none;
+            color: green;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="timer-container">
+        <div class="progress-bar" id="progress-bar"></div>
+        <div class="timer" id="timer">10</div>
+    </div>
+    <div class="message" id="message"></div>
+    <!-- <script src="script.js"></script> -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const progressBar = document.getElementById("progress-bar");
+            const timer = document.getElementById("timer");
+            const message = document.getElementById("message");
+        
+            let countdown = 10; // Set your countdown time in seconds
+            const interval = 1000; // Update every 1 second (1000 milliseconds)
+        
+            const updateProgressBar = () => {
+                const progress = (countdown / 10) * 100; // Assuming a 10-second countdown
+                progressBar.style.width = progress + "%";
+            };
+        
+            const updateTimer = () => {
+                timer.textContent = countdown;
+            };
+        
+            const countdownFunction = () => {
+                updateProgressBar();
+                updateTimer();
+        
+                if (countdown === 0) {
+                    clearInterval(timerInterval);
+                    message.textContent = "Time's up!";
+                    message.style.display = "block";
+                }
+        
+                countdown--;
+            };
+        
+            const timerInterval = setInterval(countdownFunction, interval);
+        
+            countdownFunction(); // Initialize the progress and timer values
+        });
+        
+    </script>
+</body>
+</html>

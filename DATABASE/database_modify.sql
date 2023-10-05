@@ -1,3 +1,17 @@
+INSERT INTO category(category_name, description) VALUES (
+    'Grocery',
+    'food and grains, daily needs, spices, frozen items, packet foods'
+);
+
+INSERT INTO category(category_name, description) VALUES (
+  'Stationery',
+    'books, pens, school items, sheets'
+);
+
+-- --------------------------------------------------------------------------------
+
+
+
 INSERT INTO category VALUES (
     1,
     'Grocery',
@@ -275,3 +289,154 @@ INSERT INTO employees(salary) VALUES (10000) WHERE id = 1;
 
 
 TRUNCATE TABLE table_name RESTART IDENTITY;
+
+
+DROP SCHEMA public CASCADE;
+CREATE SCHEMA public;
+
+
+
+
+
+
+create table station(id int, city varchar(21),state varchar(2),lat_n int,long_w int);
+
+SELECT DISTINCT city FROM station WHERE LOWER(city) LIKE '[aeiou]%[aeiou]';
+
+INSERT INTO station VALUES
+    (1,
+    'Ahrissue',
+    'KL',
+    45,
+    69),
+    (2,
+    'Ahrissua',
+    'KL',
+    45,
+    69),
+    (3,
+    'Ahrissui',
+    'KL',
+    45,
+    69),
+    (4,
+    'Ahrissuo',
+    'KL',
+    45,
+    69),
+    (5,
+    'ahrissuu',
+    'KL',
+    45,
+    69),
+    (6,
+    'ehrissua',
+    'KL',
+    45,
+    69),
+    (7,
+    'Ehrissui',
+    'KL',
+    45,
+    69),
+    (8,
+    'Ehrissuo',
+    'KL',
+    45,
+    69),
+    (9,
+    'ehrissuu',
+    'KL',
+    45,
+    69),
+    (10,
+    'ehrissue',
+    'KL',
+    45,
+    69),
+    (11,
+    'ihrissua',
+    'KL',
+    45,
+    69),
+    (12,
+    'ohrissui',
+    'KL',
+    45,
+    69),
+    (13,
+    'uhrissuo',
+    'KL',
+    45,
+    69),
+    (14,
+    'uhrissua',
+    'KL',
+    45,
+    69),
+    (15,
+    'ohrissue',
+    'KL',
+    45,
+    69);
+
+
+
+SELECT DISTINCT CITY FROM STATION
+WHERE 
+LOWER(CITY) LIKE 'A%a' OR 
+LOWER(CITY) LIKE 'A%e' OR 
+LOWER(CITY) LIKE 'A%i' OR 
+LOWER(CITY) LIKE 'A%O' OR 
+LOWER(CITY) LIKE 'A%u' OR 
+LOWER(CITY) LIKE 'E%a' OR 
+LOWER(CITY) LIKE 'E%e' OR 
+LOWER(CITY) LIKE 'E%i' OR 
+LOWER(CITY) LIKE 'E%o' OR 
+LOWER(CITY) LIKE 'E%u' OR 
+LOWER(CITY) LIKE 'I%a' OR 
+LOWER(CITY) LIKE 'I%e' OR 
+LOWER(CITY) LIKE 'I%i' OR 
+LOWER(CITY) LIKE 'I%o' OR 
+LOWER(CITY) LIKE 'I%u' OR 
+LOWER(CITY) LIKE 'O%a' OR 
+LOWER(CITY) LIKE 'O%e' OR 
+LOWER(CITY) LIKE 'O%i' OR 
+LOWER(CITY) LIKE 'O%o' OR 
+LOWER(CITY) LIKE 'O%u' OR
+LOWER(CITY) LIKE 'U%a' OR 
+LOWER(CITY) LIKE 'U%e' OR 
+LOWER(CITY) LIKE 'U%i' OR 
+LOWER(CITY) LIKE 'U%o' OR 
+LOWER(CITY) LIKE 'U%u';
+
+
+
+
+
+SELECT DISTINCT CITY FROM STATION WHERE LOWER(LEFT(CITY, 1)) IN ('a', 'e', 'i', 'o', 'u') 
+AND LOWER(RIGHT(CITY, 1)) IN ('a', 'e', 'i', 'o', 'u');
+
+
+SELECT DISTINCT city
+FROM   station
+WHERE  NOT city LIKE 'A%'
+       AND NOT city LIKE 'E%'
+       AND NOT city LIKE 'I%'
+       AND NOT city LIKE 'O%'
+       AND NOT city LIKE 'U%'; 
+
+
+SELECT DISTINCT city
+FROM   station
+WHERE  NOT city LIKE '%A'
+       AND NOT city LIKE '%E'
+       AND NOT city LIKE '%I'
+       AND NOT city LIKE '%O'
+       AND NOT city LIKE '%U'; 
+
+       
+SELECT DISTINCT city FROM   station WHERE  NOT city LIKE '%a' AND NOT city LIKE '%e'
+AND NOT city LIKE '%i'
+AND NOT city LIKE '%o'
+AND NOT city LIKE '%u'; 

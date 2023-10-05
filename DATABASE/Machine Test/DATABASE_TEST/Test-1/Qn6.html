@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      Create four tables as shown in the following ER diagram. You must include
+      the primary keys, foreign keys and some suitable data types. All columns
+      should be non-nullable.
+    </p>
+
+    <img src="/Qn6-ER-Diagram.png" alt="">
+
+
+       <h3>Table: vehicle</h3> 
+
+       <h6>Columns:</h6> 
+       <ul>
+        <li> vehicle_regn_number (Primary Key) </li>
+        <li> registration_date</li>
+        <li> value</li>
+       </ul>
+       
+       <h3>Table: driver</h3> 
+
+       <h6>Columns:</h6> 
+       <ul>
+        <li> driver_number (Primary Key) </li>
+        <li> first_name </li>
+        <li> last_name </li>
+       </ul>     
+
+       <h3>Table: insurance_policy</h3> 
+
+       <h6>Columns:</h6> 
+       <ul>
+        <li> policy_number (Primary Key)  </li>
+        <li> vehicle_regn_number (Foreign Key referencing vehicle table) </li>
+        <li> start_date </li>
+        <li> end_date </li>
+        <li> driver_number (Foreign Key referencing driver table) </li>
+       </ul>
+       
+       <h3>Table: claim</h3> 
+
+       <h6>Columns:</h6> 
+       <ul>
+        <li> claim_number (Primary Key)  </li>
+        <li> policy_number (Foreign Key referencing insurance_policy table) </li>
+        <li> driver_number (Foreign Key referencing driver table) </li>
+        <li> claim_amount </li>
+       </ul>
+               
+
+  </body>
+</html>

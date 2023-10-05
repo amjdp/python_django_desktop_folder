@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/todo.css">
+</head>
+<body>
+    <div class="todo">
+        <p>To Do App</p>
+    </div>
+    <div class="welcome">
+        <p>Welcome Anonymous User</p>
+    </div>
+    <div class="form">
+       
+    </div>
+    <div class="form-main">
+        <div class="input">
+            <input type="text" class="label1" id="title">
+            
+        </div>
+        <div class="label2">
+            <input type="text" class="label2" id="desc">
+        </div>
+        <div class="btn-3">
+            <button class="btn-main" onclick="addTask()">SAVE</button>
+        </div>
+            
+    </div>
+    <div>
+        <table class="tb" id="todo_tb">
+            <thead>
+              <tr>
+                
+                <th scope="col">TITLE</th>
+                <th scope="col">description  </th>
+                
+              </tr>
+            </thead>
+            <tbody>
+        
+            </tbody>
+        
+          </table>
+          <div class="dev">
+            <p><b>Developed By: cybersquare</b></p>
+          </div>
+        
+    </div>
+    <script>
+            
+        var tr_no = 0
+        function addTask(){
+             var tb = document.getElementById("todo_tb")
+             var new_tr = document.createElement("tr") //creating new row
+             var title = document.getElementById("title")
+             var desc = document.getElementById("desc")
+            
+             tr_no ++
+             var tr_id = "tr"+tr_no
+             new_tr.setAttribute("id",tr_id)
+             //creating td inside newly created tr
+             
+             var td_title = new_tr.appendChild(document.createElement("td"))
+             var td_desc = new_tr.appendChild(document.createElement("td"))
+            
+            
+             td_title.innerHTML = title.value
+             td_desc.innerHTML = desc.value
+             
+             tb.appendChild(new_tr)
+             title.value = ""
+             desc.value = ""
+    
+        }
+        </script>
+    
+</body>
+</html>

@@ -23,8 +23,8 @@
 # print(name.lower())
 
 a = 'programming language'
-# print(a.capitalize())
-# print(a.swapcase())
+print(a.capitalize())
+print(a.swapcase())
 # print(a.casefold())
 # print(a.islower())
 # print(a.isupper())

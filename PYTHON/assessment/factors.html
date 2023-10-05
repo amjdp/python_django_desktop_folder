@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function factorMul(num) {
+            if(String(num).startsWith('-')) {
+              let positive = parseInt(String(num).replaceAll('-', ''))
+              let factors = factorMul(positive)
+          
+              let change = Math.floor(
+                Math.random() * (2 - 1 + 1) + 1
+              )-1
+                
+              factors[change] = parseInt("-"+factors[change])
+          
+              return factors
+            }
+            
+            let tryThis1 = Math.floor(
+              Math.random() * (num - 0 + 1) + 1
+            )
+            let tryThis2 = Math.floor(
+              Math.random() * (num - 0 + 1) + 1
+            )
+          
+            if(Math.floor(tryThis1 * tryThis2) !== num) {
+              return factorMul(num)
+            }
+          
+            return [tryThis1, tryThis2]
+          }
+
+         document.write(factorMul(-48));
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #main {
+        width: 350px;
+        height: 100px;
+        border: 1px solid #c3c3c3;
+        display: flex;
+      }
+
+      #main div {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 100px;
+      }
+
+      #main div:nth-of-type(2) {
+        flex-shrink: 6;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>The flex-shrink Property</h1>
+
+    <div id="main">
+      <div style="background-color: coral"></div>
+      <div style="background-color: lightblue"></div>
+      <div style="background-color: khaki"></div>
+      <div style="background-color: pink"></div>
+      <div style="background-color: lightgrey"></div>
+    </div>
+
+    <!-- 
+
+  The flex-shrink CSS property sets the flex shrink factor of a flex item123. 
+  If the size of all flex items is larger than the flex container, items shrink to fit according to 
+  flex-shrink1. The flex-shrink property is a sub-property of the Flexible Box Layout module3.
+   It is used alongside the other flex properties flex-grow and flex-basis, 
+   and normally defined using the flex shorthand1.
+  
+ -->
+    <p>
+      <b>Note:</b> Internet Explorer 10 and earlier versions do not support the
+      flex-shrink property.
+    </p>
+  </body>
+</html>

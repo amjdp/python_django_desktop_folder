@@ -3,7 +3,7 @@
 # file.write("This is my test file for exception handling !! ")
 # file.close()
 
-file = ""
+fh = ""
 try:
     fh = open('./demofile.txt','r')
     print(fh.read())

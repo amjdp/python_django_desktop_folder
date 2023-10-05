@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validation</title>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <style>
+        body {
+          font-family: Arial, Helvetica, sans-serif;
+          background-color: black;
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        /* Add padding to containers */
+        .container {
+          padding: 16px;
+          background-color: white;
+        }
+        
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 15px;
+          margin: 5px 0 22px 0;
+          display: inline-block;
+          border: none;
+          background: #f1f1f1;
+        }
+        
+        input[type=text]:focus, input[type=password]:focus {
+          background-color: #ddd;
+          outline: none;
+        }
+        
+        /* Overwrite default styles of hr */
+        hr {
+          border: 1px solid #f1f1f1;
+          margin-bottom: 25px;
+        }
+        
+        /* Set a style for the submit button */
+        .registerbtn {
+          background-color: #04AA6D;
+          color: white;
+          padding: 16px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 50%;
+          opacity: 0.9;
+          margin-left: 25%;
+        }
+        
+        .registerbtn:hover {
+          opacity: 1;
+        }
+        
+        /* Add a blue text color to links */
+        a {
+          color: dodgerblue;
+        }
+        
+        /* Set a grey background color and center the text of the "sign in" section */
+        .signin {
+          background-color: #f1f1f1;
+          text-align: center;
+        }
+
+        h1,p {
+            text-align: center;
+        }
+        </style>
+        </head>
+        <body>
+        
+        <form action="" method="POST">
+            {% csrf_token %}
+          <div class="container">
+            <h1>Register</h1>
+            <!-- <p>Please fill in this form to create an account.</p> -->
+            <br><br>
+        
+            <label for="name"><b>Name</b></label>
+            <input type="text" placeholder="Enter Name" name="name" id="name" ><span id="s_name"></span>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="email" ><span id="s_email"></span>
+
+            <label for="mobile"><b>Mobile</b></label>
+            <input type="text" placeholder="Enter mobile no" name="mobile" id="mobile" ><span id="s_mobile"></span>
+
+            <label for="address"><b>Address</b></label>
+            <input type="text" placeholder="Enter Address" name="address" id="address" ><span id="s_address"></span>
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="psw" ><span id="s_pass"></span>
+        
+            
+            <button type="submit" class="registerbtn" onclick=" return validate()">Register</button>
+          </div><br><br>
+          
+          
+        </form>
+
+
+        <!-- validation  -->
+
+
+        <script>
+            function validate() {
+                var name = document.getElementById("name");
+                var s_name = document.getElementById("s_name");
+                    
+                var email = document.getElementById("email");
+                var s_email = document.getElementById("s_email");
+                // var emailpattern=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+                    
+                var mobile = document.getElementById("mobile");
+                var s_mobile = document.getElementById("s_mobile");
+                // var regPhone=/^\d{10}$/;
+
+                var address = document.getElementById("address");
+                var s_address = document.getElementById("s_address");
+                    
+                var password = document.getElementById("psw");
+                var s_pass = document.getElementById("s_pass");
+
+
+                status =1
+                // name 
+                if(name.value == ""){
+                    
+                    status = 0;
+                    s_name.style.display = "block";
+                    s_name.style.color = "red";
+                    s_name.innerHTML = "please enter name";
+                }else{
+                    status = 1;
+                    s_name.style.display = "none";
+                }
+                // email 
+                if(email.value == ""){
+                    
+                    status = 0;
+                    s_email.style.display = "block";
+                    s_email.style.color = "red";
+                    s_email.innerHTML = "please enter email"
+                }else{
+                    status = 1;
+                    s_email.style.display = "none";
+                  }
+
+            
+                // mobile 
+                if(mobile.value == ""){
+                    
+                    status = 0;
+                    s_mobile.style.display = "block";
+                    s_mobile.style.color = "red";
+                    s_mobile.innerHTML = "please enter mobile"
+                }else{
+                    status = 1;
+                    s_mobile.style.display = "none";
+                }
+
+                // address 
+                if(address.value == ""){
+                    
+                    status = 0;
+                    s_address.style.display = "block";
+                    s_address.style.color = "red";
+                    s_address.innerHTML = "please enter address"
+                }else{
+                    status = 1;
+                    s_address.style.display = "none";
+                }
+
+                // password 
+                if(password.value == ""){
+                    
+                    status = 0;
+                    s_pass.style.display = "block";
+                    s_pass.style.color = "red";
+                    s_pass.innerHTML = "please enter password"
+                }else{
+                    status = 1;
+                    s_pass.style.display = "none";
+                }
+
+                if (status == 0){
+                    
+                  return false;
+                    
+                    }                
+              }
+        </script>
+        
+        </body>
+</html>

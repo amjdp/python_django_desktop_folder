@@ -1,0 +1,89 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\WINDOWS\system32> wsl --install
+Installing: Virtual Machine Platform
+Virtual Machine Platform has been installed.
+Installing: Windows Subsystem for Linux
+Windows Subsystem for Linux has been installed.
+Installing: Ubuntu
+Ubuntu has been installed.
+The requested operation is successful. Changes will not be effective until the system is rebooted.
+PS C:\WINDOWS\system32> wsl --list --online
+The following is a list of valid distributions that can be installed.
+Install using 'wsl.exe --install <Distro>'.
+
+NAME                                   FRIENDLY NAME
+Ubuntu                                 Ubuntu
+Debian                                 Debian GNU/Linux
+kali-linux                             Kali Linux Rolling
+Ubuntu-18.04                           Ubuntu 18.04 LTS
+Ubuntu-20.04                           Ubuntu 20.04 LTS
+Ubuntu-22.04                           Ubuntu 22.04 LTS
+OracleLinux_8_5                        Oracle Linux 8.5
+OracleLinux_7_9                        Oracle Linux 7.9
+SUSE-Linux-Enterprise-Server-15-SP4    SUSE Linux Enterprise Server 15 SP4
+openSUSE-Leap-15.4                     openSUSE Leap 15.4
+openSUSE-Tumbleweed                    openSUSE Tumbleweed
+PS C:\WINDOWS\system32> wsl --install -d Ubuntu-22.04
+Installing: Ubuntu 22.04 LTS
+Ubuntu 22.04 LTS has been installed.
+Launching Ubuntu 22.04 LTS...
+PS C:\WINDOWS\system32> wsl -l -v
+Windows Subsystem for Linux has no installed distributions.
+
+Use 'wsl.exe --list --online' to list available distributions
+and 'wsl.exe --install <Distro>' to install.
+
+Distributions can also be installed by visiting the Microsoft Store:
+https://aka.ms/wslstore
+Error code: Wsl/WSL_E_DEFAULT_DISTRO_NOT_FOUND
+PS C:\WINDOWS\system32>
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Step 1: Enable the WSL Tool
+First, you have to enable the Windows Subsystem for the Linux feature for the tool to run on Windows. To do this, launch the PowerShell with administrator privileges. And then, execute this command: dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart. Once done, restart your computer.
+
+powershell - after system restart
+
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+Enter new UNIX username: ATHIRA
+adduser: Please enter a username matching the regular expression configured
+via the NAME_REGEX[_SYSTEM] configuration variable.  Use the `--force-badname'
+option to relax this check or reconfigure NAME_REGEX.
+Enter new UNIX username: ATHIRA_WINDOWS
+adduser: Please enter a username matching the regular expression configured
+via the NAME_REGEX[_SYSTEM] configuration variable.  Use the `--force-badname'
+option to relax this check or reconfigure NAME_REGEX.
+Enter new UNIX username: athira_m_j$
+adduser: Please enter a username matching the regular expression configured
+via the NAME_REGEX[_SYSTEM] configuration variable.  Use the `--force-badname'
+option to relax this check or reconfigure NAME_REGEX.
+Enter new UNIX username: --force-badname
+adduser: Only one or two names allowed.
+Enter new UNIX username: athira_m_j_1994$
+adduser: Please enter a username matching the regular expression configured
+via the NAME_REGEX[_SYSTEM] configuration variable.  Use the `--force-badname'
+option to relax this check or reconfigure NAME_REGEX.
+Enter new UNIX username: athira_windows_94
+New password:
+Retype new password:
+passwd: password updated successfully
+Installation successful!
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+Welcome to Ubuntu 22.04.1 LTS (GNU/Linux 5.15.79.1-microsoft-standard-WSL2 x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+This message is shown once a day. To disable it please create the
+/home/athira_windows_94/.hushlogin file.
+athira_windows_94@DESKTOP-N271D42:~$

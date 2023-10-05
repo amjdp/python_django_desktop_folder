@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Example</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+        /* Basic styles for the page layout */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #444;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+main {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar styles */
+.sidebar {
+    background-color: #eee;
+    padding: 20px;
+    flex: 1;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+/* Content styles */
+.content {
+    background-color: #f9f9f9;
+    padding: 20px;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature {
+    margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: #444;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Flexbox Example</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+            </ul>
+        </section>
+        <section class="content">
+            <h2>Main Content</h2>
+            <p>Welcome to the Flexbox Example page. Here, you can learn about the amazing features of Flexbox for modern web layouts. Flexbox makes it easier to create responsive and flexible designs. Explore the links in the sidebar to discover more!</p>
+            <div class="feature">
+                <h3>Feature 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id ex vel quam luctus tempus.</p>
+            </div>
+            <div class="feature">
+                <h3>Feature 2</h3>
+                <p>Nullam in justo eu justo tincidunt eleifend. Aliquam vitae sapien et purus sollicitudin ullamcorper.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Flexbox Example</p>
+    </footer>
+</body>
+</html>

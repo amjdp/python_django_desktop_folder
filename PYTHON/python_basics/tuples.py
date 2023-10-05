@@ -33,5 +33,8 @@
 # x = tuple(('Python', 'Angular', 'Flutter'))
 # print(x)
 
+{% comments %}
+
+{% endcomment %}
 
 print(int('1AFD',16))

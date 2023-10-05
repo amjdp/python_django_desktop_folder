@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>assignment3</title>
+
+    <!-- <link rel="stylesheet" href="/Assignment/assignment.css" /> -->
+    <style>
+      /* external css file */
+
+      table {
+        width: fit-content;
+
+        height: fit-content;
+      }
+
+      h3 {
+        background-color: antiquewhite;
+      }
+
+      table,
+      tr,
+      td {
+        padding: 10px;
+      }
+
+      label {
+        color: rgb(78, 87, 218);
+      }
+
+      #button_last {
+        background-color: rgb(199, 241, 241);
+      }
+
+      .b2 {
+        float: right;
+      }
+
+      button {
+        background-color: aqua;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table>
+      <th colspan="2">
+        <h3>Create Account</h3>
+      </th>
+
+      <tr>
+        <td>
+          <label for="">First Name*</label> <br />
+
+          <input type="text" placeholder="enter your first name" />
+        </td>
+
+        <td>
+          <label for="">Last Name</label> <br /><input
+            type="text"
+            placeholder="enter your last name"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <label for="">Email*</label> <br /><input
+            type="email"
+            placeholder="enter your email"
+          />
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <label for="">Gender*</label>
+
+          <br />
+          <input type="radio" value="male" />male
+
+          <input type="radio" value="female" />female
+        </td>
+
+        <td>
+          <label for="">Hobbies </label> <br />
+
+          <input type="checkbox" />music
+
+          <input type="checkbox" />sports
+
+          <input type="checkbox" />travel
+
+          <input type="checkbox" />movies
+        </td>
+      </tr>
+
+      <td>
+        <label for="">Source of Income</label> <br />
+
+        <select name="" id="">
+          <option value="Employee">Employee</option>
+
+          <option value="Staff">Staff</option>
+
+          <option value="Student">Student</option>
+        </select>
+      </td>
+
+      <td>
+        <label for="">Income</label><br />
+
+        <input type="range" /> <button class="b1">20k</button>
+      </td>
+
+      <tr>
+        <td>
+          <label for="">Upload Profile Picture</label><br />
+
+          <input type="file" />
+        </td>
+
+        <td>
+          <label for="">Age</label><br />
+
+          <input type="age" />
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2">
+          <label for="">Bio</label><br />
+
+          <textarea name="" id="" cols="60" rows="5"></textarea>
+        </td>
+      </tr>
+
+      <tr id="button_last">
+        <td colspan="2"><button class="b2">Create</button></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+{% load static %}
+<!-- This is the master page for this website
+All other pages extend this page  -->
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Home page</title>
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+{% block header %}
+<!-- Add style tag for individual pages -->
+{% endblock %}
+<style type="text/css">
+ p{
+   padding: 10px;
+ }
+</style>
+</head>
+
+<body>
+    <div class="container"><!--  Main div -->
+       <div class="logo_div" >
+          <img src="{% static 'images/baabtra_logo.png' %}">
+          <div style="text-align: right; float: right; margin-top: 20px;">
+          <img src="{% static 'images/btn_login.png' %}" height="40" >
+          <img src="{% static 'images/btn_register.png' %}" height="40" >
+       </div>
+    
+       </div>
+    
+       <div class="topnav"><!--  Navigation bar  -->
+         <a class="active" href="home">Home</a>
+         <a href="courses">Courses</a>
+         <a href="contact_us">Contact Us</a>
+       </div>
+     </div>
+    <div class="content">
+     {% block content %}
+     <!-- Contents child pages are added here -->
+     {% endblock %}
+    </div>
+
+    
+ <div class="footer" > <!--  fixed footer  -->
+    <div class="grid-container" >
+      <div class="grid-item"  style="padding: 5px; padding-left: 20px;"  >
+        baabtra<br>
+        Mentoring Partner
+      </div>
+      <div class="grid-item" style="padding: 5px;" >
+        <b>Email:</b> info@baabtra.com<br>
+        <b>Phone:</b> +91-8592 058 444<br>
+      </div>
+      <div class="grid-item" style="padding: 5px;" >
+        <b>Address:</b> <br>
+        5<sup>th</sup> Floor, CaFIT Square, <br>Hi lite Business Park, Kozhikode
+      </div> 
+    </div>
+  </div>
+ </body>
+ </html>
+ 
+ 
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Legend Effect on Input Focus</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <style>
+      /* Basic styles for labels and input fields */
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      /* Focus styles for labels */
+      .form-group:focus-within label {
+        color: #007bff; /* Change label color on focus */
+      }
+
+      /* Focus styles for input fields */
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="tel"]:focus {
+        outline: none; /* Remove the default focus outline */
+        border-color: #007bff; /* Change input border color on focus */
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle box shadow on focus */
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend>Contact Information</legend>
+
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+          />
+        </div>
+
+        <!-- Add more input fields here -->
+      </fieldset>
+
+      <!-- Add more fieldsets and input fields if needed -->
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

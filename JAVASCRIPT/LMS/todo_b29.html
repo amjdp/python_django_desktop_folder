@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bod">
+    <div class="contaner">
+        <h1 style="text-decoration:underline; padding: 5%;"> TO DO LIST</h1>
+        <label for="task">Enter a task</label> &nbsp;
+        <input class="" type="text" id="task"><br><br>
+
+        <label for="description">Description</label>&nbsp; 
+        <input class="" type="text" name="" id="description" cols="30" rows="10"><br><br>
+
+        <label for="stock">Stock</label>&nbsp; 
+        <input class="" type="text" name="" id="stock" cols="30" rows="10"><br><br>
+
+        <label for="price">Price</label>&nbsp; 
+        <input class="" type="text" name="" id="price" cols="30" rows="10">
+
+        <div class="kk">
+        <button class="ap" type="submit" id="sub" onclick="f_task()">Submit</button></div>
+
+        <table id="t_table" style="width: 100%;" cellpadding="5">
+            <tr>
+                <th style="text-align: center; width: 100px;" >Sl No.</th>
+                <th style="text-align: center;">Task</th>
+                <th style="text-align: center;">Decription</th>
+                <th style="text-align: center;">Date</th>
+                <th style="text-align: center;">Stock</th>
+                <th style="text-align: center;">Price</th>
+                <th style="text-align: center;">Status</th>
+                <th  colspan='3' style="text-align: center;">Operation</th>
+            </tr>
+        </table>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Modal Header</h4>
+                </div>
+                <div class="modal-body">
+
+                    <label for="">task</label>
+                    <input type="text" id="t1"><br>
+                    <label for="">description</label>
+                    <input type="text" id="d1"><br>
+                    <label for="">stock</label>
+                    <input type="text" id="t2"><br>
+                    <label for="">price</label>
+                    <input type="text" id="t3"><br>
+                    <input type="text" hidden id="trid">
+
+                </div>
+                <div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="editbtn" onclick="edit()" class="btn btn-default" data-dismiss="modal">submit</button>
+                    <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+        let i = 0
+        function f_task() {
+            const d = new Date();
+            console.log(d)
+            var table = document.getElementById('t_table')
+            var task = document.getElementById('task').value
+            var descri = document.getElementById('description').value
+            var stock = document.getElementById('stock').value
+            var price = document.getElementById('price').value
+            
+
+            var row = table.insertRow()
+            row.setAttribute("id", "row" + i);
+
+            var cell1 = row.insertCell(0)
+            var cell2 = row.insertCell(1)
+            var cell3 = row.insertCell(2)
+            var cell4 = row.insertCell(3)
+            var cell5 = row.insertCell(4)
+            var cell6 = row.insertCell(5)
+            var cell7 = row.insertCell(6)
+            var cell8 = row.insertCell(7)
+            var cell9 = row.insertCell(8)
+            var cell10 = row.insertCell(9)
+            
+
+            cell1.innerHTML = i + 1
+            cell2.innerHTML = task
+            cell3.innerHTML = descri
+            cell4.innerHTML = d.toDateString();
+            cell5.innerHTML = stock
+            cell6.innerHTML = price
+            
+
+            var btn = document.createElement("BUTTON")
+            btn.className = 'comp'
+            btn.innerHTML = "complete"
+            btn.onclick = function com() {
+                cell7.innerHTML = 'completed'
+                btn.disabled = true
+
+            }
+            var btn_del = document.createElement("BUTTON")
+            btn_del.innerHTML = "Delete"
+            btn_del.className = "del"
+            btn_del.addEventListener('click', function handleClick(event) {
+                el_id = event.target.parentElement.parentElement.id
+                element = document.getElementById(el_id)
+                element.remove()
+
+            })
+            var btn_edit = document.createElement("BUTTON")
+            btn_edit.innerHTML = "Edit"
+            btn_edit.className = "edit"
+            btn_edit.setAttribute("data-toggle", "modal")
+            btn_edit.setAttribute("data-target", "#myModal")
+            btn_edit.addEventListener('click', function handleedit(event) {
+
+                ed_id = event.target.parentElement.parentElement.id
+                ed_list = document.getElementById(ed_id).childNodes
+                console.log(ed_list)
+
+                document.getElementById("t1").value = ed_list[1].innerHTML
+                console.log(ed_list[1].innerHTML)
+                document.getElementById("d1").value = ed_list[2].innerHTML
+                document.getElementById("t2").value = ed_list[4].innerHTML
+                document.getElementById("t3").value = ed_list[5].innerHTML
+                document.getElementById("trid").value = ed_id
+
+            })
+
+
+
+            cell8.appendChild(btn)
+            cell9.appendChild(btn_del)
+            cell10.appendChild(btn_edit)
+            i++
+        }
+
+        function edit() {
+            var task = document.getElementById("t1").value
+            var des = document.getElementById("d1").value
+            var stock = document.getElementById("t2").value
+            var price = document.getElementById("t3").value
+            //var id = document.getElementById("trid").value
+
+            td_list = document.getElementById(ed_id).childNodes
+            td_list[1].innerHTML = task
+            td_list[2].innerHTML = des
+            td_list[3].innerHTML = new Date().toDateString()
+            td_list[4].innerHTML = stock
+            td_list[5].innerHTML = price
+           
+           
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

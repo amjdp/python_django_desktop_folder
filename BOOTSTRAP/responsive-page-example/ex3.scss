@@ -1,0 +1,237 @@
+$main-color: #46a049;
+$main-light-color: #4ab24e;
+$bg-color: #1d1e22;
+$bg-light-color: #333642;
+$text-color: #ffffff;
+$sborder: #cdcdcd;
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  a {
+    color: $main-color;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $main-light-color;
+  }
+
+  ::selection {
+    background-color: $main-color;
+    color: $text-color;
+  }
+  .navigation a {
+    color: $text-color;
+  }
+  .menu-icon {
+    color: $text-color;
+  }
+  .sticky-navigation {
+    background-color: $bg-color;
+    a {
+      color: $text-color;
+    }
+  }
+  .btn-main {
+    background-color: $main-color;
+    color: #ffffff;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15);
+  }
+  .btn-main:hover {
+    background-color: $main-light-color;
+  }
+  .divider-shape {
+    height: 0;
+    margin: 0.5rem 0;
+    overflow: hidden;
+    border-top: 3px solid rgba(0, 0, 0, 0.15);
+    background-color: $main-color;
+    width: 4rem;
+  }
+  .header {
+    background-image: url("https://images.unsplash.com/photo-1525863076872-bd16ca4ceef3?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=334&q=80");
+    background-position: 80% 25%;
+    background-repeat: no-repeat;
+    background-size: 640px auto;
+    background-color: $bg-color;
+    color: $text-color;
+    .intro-cards {
+      .container {
+        .row {
+          .col-md-4:first-child {
+            .card {
+              background-color: $main-color;
+              .divider-shape {
+                background-color: $bg-color;
+              }
+            }
+          }
+          .col-md-4 {
+            .card {
+              background-color: $bg-color;
+              color: $text-color;
+            }
+            .card:hover {
+              background-color: $main-color;
+              cursor: pointer;
+              transition: background-color 0.4s ease-in;
+              .divider-shape {
+                background-color: $bg-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .services {
+    background-color: $text-color;
+    color: $bg-color;
+    border-bottom: 1px solid $sborder;
+    .container {
+      .row {
+        .col-sm-4 {
+          .card:hover {
+            background-color: $main-color;
+            color: $text-color;
+            cursor: pointer;
+            transition: background-color 0.5s ease-in, color 0.5s ease-in;
+          }
+        }
+      }
+    }
+  }
+  .work {
+    background-color: $text-color;
+    color: $bg-color;
+    border-bottom: 1px solid $sborder;
+  }
+  .about {
+    background-color: $text-color;
+    color: $bg-color;
+    border-bottom: 1px solid $sborder;
+
+    .card-img-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    .card:hover .card-img-overlay {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .card1 img {
+      max-height: 420px;
+      object-fit: cover;
+    }
+    .card2 img,
+    .card3 img {
+      max-height: 200px;
+      object-fit: cover;
+    }
+    @media (max-width: 768px) {
+      .card1 img {
+        max-height: 300px;
+      }
+      .card2 img,
+      .card3 img {
+        max-height: 300px;
+        width: 100%;
+      }
+    }
+  }
+  .testimonial {
+    background-color: $text-color;
+    color: $bg-color;
+    border-bottom: 1px solid $sborder;
+  }
+  .blog {
+    background-color: $text-color;
+    color: $bg-color;
+    border-bottom: 1px solid $sborder;
+  }
+  .footer-cta {
+    background-color: $bg-light-color;
+    color: $text-color;
+    border-bottom: 1px solid $sborder;
+  }
+  .address-bar {
+    background-color: $main-color;
+    color: $bg-color;
+    border-bottom: 1px solid $sborder;
+    a {
+      color: $text-color;
+    }
+    a:hover {
+      color: $bg-color;
+    }
+  }
+  .footer-bar {
+    background-color: $bg-color;
+    color: $text-color;
+    border-bottom: 1px solid $sborder;
+  }
+  .darkthemebtn {
+    position: fixed;
+    right: -0.2rem;
+    bottom: 50px;
+    background-color: $bg-color;
+    color: $text-color;
+  }
+  .darkthemebtn:hover {
+    color: $main-color;
+  }
+  .back-to-top {
+    position: fixed;
+    right: -0.2rem;
+    bottom: 100px;
+    background-color: $bg-color;
+    color: $text-color;
+    display: none;
+  }
+  .back-to-top:hover {
+    color: $main-color;
+  }
+}
+
+.dark-theme {
+  .services {
+    background-color: $bg-color;
+    color: $text-color;
+    .container {
+      .row {
+        .col-sm-4 {
+          .card {
+            background-color: $main-color;
+          }
+          .card:hover {
+            color: $bg-color;
+          }
+        }
+      }
+    }
+  }
+  .work {
+    background-color: $bg-color;
+    color: $text-color;
+  }
+  .about {
+    background-color: $bg-color;
+    color: $text-color;
+  }
+  .testimonial {
+    background-color: $bg-color;
+    color: $text-color;
+  }
+  .blog {
+    background-color: $bg-color;
+    color: $text-color;
+  }
+  .footer-cta {
+  }
+  .address-bar {
+  }
+  .footer-bar {
+  }
+  .darkthemebtn {
+    background-color: $text-color;
+    color: $bg-color;
+  }
+}

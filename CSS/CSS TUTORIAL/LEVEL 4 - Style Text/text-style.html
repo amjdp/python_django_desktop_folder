@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        font-family: cursive;
+        color: purple;
+      }
+
+      h2 {
+        /* font-family: monospace; */
+        font-family: fantasy;
+      }
+
+      p {
+        /* font-style: oblique; */
+        font-style: italic;
+        font-size: 50px;
+        font-weight: 600;
+        /* font-size: length | percentage | Size in Words | inherit; */
+      }
+
+      h3 {
+        letter-spacing: 4px;
+      }
+
+      span {
+        word-spacing: 10px;
+      }
+      .weird {
+        /* Add CSS here*/
+        direction: rtl;
+      }
+      h2 {
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Introduction to Text styling</h1>
+    <h2>Changing the Font type</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta inventore,
+      possimus veritatis accusamus iste distinctio, eligendi pariatur officiis
+      non eos maxime a quisquam nesciunt! Voluptatibus, minima nobis! Facilis
+      maiores enim saepe quo animi recusandae eum, omnis architecto.
+      Voluptatibus temporibus quo alias. Beatae nulla id natus, eaque officiis
+      ea impedit ex.
+    </p>
+
+    <h3>Syntax of letter-spacing property:</h3>
+    <span>letter-spacing: normal | length | initial | inherit; </span>
+
+    <h3>Syntax of word-spacing property:</h3>
+    <span>word-spacing: normal | length | initial | inherit;</span>
+
+    <h4>Text Direction (direction): Syntax for direction property:</h4>
+    <span class="weird">direction: ltr | rtl;</span>
+
+    <h3>Aligning the Text (text-align)</h3>
+
+    <h3>Decorating the Text (text-decoration)</h3>
+    <span class="weird"
+      >text-decoration: none | underline | overline | line-through;</span
+    >
+
+    <h3>Handling text overflow (text-overflow):</h3>
+    <p>
+      In CSS, the text-overflow property deals with the text that is overflowed
+      or extra. Suppose we created a box and added some text to it, but the text
+      does not fit in the box and runs out of the borderline of the box. This
+      situation is called text overflow. To manage this type of situation, CSS
+      offers the text-overflow property. With the help of this property, we can
+      manage the overflowed text in many ways such as you can clip that text,
+      add a scroll bar, etc.
+    </p>
+    <span class="weird"
+      >text-overflow: clip | ellipsis | string | initial | inherit;</span
+    >
+    <p>
+      Mostly this property is used with values clip and ellipsis. With the clip
+      value, the text is clipped and with ellipsis value, the ellipsis(...) is
+      added in place of the clipped text. NOTE: This property is used alongside
+      the CSS overflow property, using which we can control how the entire
+      content inside any HTML tag should be treated if there is limited space
+      (width or height).
+    </p>
+  </body>
+</html>
